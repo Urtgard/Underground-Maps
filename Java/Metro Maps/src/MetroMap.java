@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class MetroMap {
 	private Map<String, Station> stations = new HashMap<String, Station>();
-	private ArrayList<Line> lines = new ArrayList<>();
+	private Map<String, Line> lines = new HashMap<String, Line>();
 
 	public void addStation(Station station) {
 		stations.put(station.getName(), station);
@@ -15,8 +15,16 @@ public class MetroMap {
 		return stations.get(name);
 	}
 
-	public void addLine(Line l) {
-		lines.add(l);
+	public void addLine(Line line) {
+		lines.put(line.getName(), line);
+	}
+
+	public Line getLine(String name) {
+		return lines.get(name);
+	}
+
+	public Map<String, Line> getLines() {
+		return lines;
 	}
 
 	@Override
@@ -27,8 +35,8 @@ public class MetroMap {
 		}
 
 		result += "\n\nLines:";
-		for (Line line : lines) {
-			result += "\n " + line;
+		for (Map.Entry line : lines.entrySet()) {
+			result += "\n " + line.getValue();
 		}
 
 		return result;
