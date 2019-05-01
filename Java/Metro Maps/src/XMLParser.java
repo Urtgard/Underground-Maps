@@ -1,7 +1,14 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import javax.imageio.ImageIO;
 
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -125,5 +132,46 @@ public class XMLParser {
 		}
 
 		return map;
+	}
+
+	public void writeImage(MetroMap map, double[] x, double[] y) {
+		Station[] stations = map.getStationsArray();
+		int width = 20;
+		int height = 20;
+		for (double value:x){
+			if (value > width) {
+				width =(int)Math.round(value);
+			}
+		}
+		for (double value:y){
+			if (value > height) {
+				height =(int)Math.round(value);
+			}
+		}
+		width += 14 + 200;
+		height += 14;
+
+		BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+		Graphics graphics = bufferedImage.getGraphics();
+		graphics.setColor(Color.WHITE);
+		graphics.fillRect(0, 0, width, height);
+		graphics.setColor(Color.BLACK);
+		graphics.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		
+		int i = 0;
+		for (Station station : stations){
+			graphics.drawString(station.getName(), (int)Math.round(x[i]), height - (int)Math.round(y[i]));
+			i++;
+		}
+		
+
+		try {
+			ImageIO.write(bufferedImage, "png", new File("map.png"));
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		System.out.println("Image Created");
 	}
 }

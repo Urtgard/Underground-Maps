@@ -2,7 +2,7 @@
 public class Station {
 	private double xCoord;
 	private double yCoord;
-	private String name;
+	String name;
 	private boolean dummy;
 
 	Station(String n, double x, double y) {
@@ -16,6 +16,14 @@ public class Station {
 		yCoord = y;
 		name = n;
 		dummy = d;
+	}
+
+	public double getX() {
+		return xCoord;
+	}
+
+	public double getY() {
+		return yCoord;
 	}
 
 	public String getName() {

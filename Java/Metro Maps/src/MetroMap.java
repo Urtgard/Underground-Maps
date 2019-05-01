@@ -15,6 +15,14 @@ public class MetroMap {
 		return stations.get(name);
 	}
 
+	public Map<String, Station> getStations() {
+		return stations;
+	}
+	
+	public Station[] getStationsArray(){
+		return stations.values().toArray(new Station[0]);
+	}
+
 	public void addLine(Line line) {
 		lines.put(line.getName(), line);
 	}

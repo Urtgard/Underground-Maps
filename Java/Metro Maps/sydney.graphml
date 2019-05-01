@@ -1,0 +1,5240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd" xmlns:y="http://www.yworks.com/xml/graphml">
+<key id="x" for="node" attr.name="x_coordinate" attr.type="double"/>
+<key id="y" for="node" attr.name="y_coordinate" attr.type="double"/>
+<key id="label" for="node" attr.name="station_name" attr.type="string"/>
+<key id="regular" for="node" attr.name="regular_vertex" attr.type="boolean"/>
+<key id="dummy" for="node" attr.name="dummy_vertex" attr.type="boolean"/>
+<key id="labelVertex" for="node" attr.name="label_vertex" attr.type="boolean"/>
+<key id="tick" for="node" attr.name="tick_vertex" attr.type="boolean"/>
+<key id="d0" for="node" yfiles.type="nodegraphics"/>
+<key id="d1" for="edge" yfiles.type="edgegraphics"/>
+<key id="l0" for="edge" attr.name="l0" attr.type="boolean" color.r="255" color.g="215" color.b="0">
+	<default>FALSE</default>
+</key>
+<key id="l1" for="edge" attr.name="l1" attr.type="boolean" color.r="255" color.g="0" color.b="0">
+	<default>FALSE</default>
+</key>
+<key id="l2" for="edge" attr.name="l2" attr.type="boolean" color.r="0" color.g="0" color.b="128">
+	<default>FALSE</default>
+</key>
+<key id="l3" for="edge" attr.name="l3" attr.type="boolean" color.r="255" color.g="140" color.b="0">
+	<default>FALSE</default>
+</key>
+<key id="l4" for="edge" attr.name="l4" attr.type="boolean" color.r="34" color.g="139" color.b="34">
+	<default>FALSE</default>
+</key>
+<key id="l5" for="edge" attr.name="l5" attr.type="boolean" color.r="100" color.g="149" color.b="237">
+	<default>FALSE</default>
+</key>
+<key id="l6" for="edge" attr.name="l6" attr.type="boolean" color.r="106" color.g="90" color.b="205">
+	<default>FALSE</default>
+</key>
+<key id="l7" for="edge" attr.name="l7" attr.type="boolean" color.r="199" color.g="21" color.b="133">
+	<default>FALSE</default>
+</key>
+<key id="l8" for="edge" attr.name="l8" attr.type="boolean" color.r="135" color.g="206" color.b="250">
+	<default>FALSE</default>
+</key>
+<key id="l9" for="edge" attr.name="l9" attr.type="boolean" color.r="0" color.g="0" color.b="0">
+	<default>FALSE</default>
+</key>
+<graph id="G" edgedefault="undirected">
+<node id="b0">
+	<data key="x">51.0</data>
+	<data key="y">65.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1529.5" y="-1950.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n159">
+	<data key="x">21.0</data>
+	<data key="y">34.0</data>
+	<data key="label">Waterfall</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="622.5" y="-1027.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Waterfall</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n11">
+	<data key="x">28.0</data>
+	<data key="y">63.0</data>
+	<data key="label">Berala</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="835.0" y="-1891.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Berala</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n15">
+	<data key="x">26.0</data>
+	<data key="y">58.0</data>
+	<data key="label">Birrong</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="772.5" y="-1747.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Birrong</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b4">
+	<data key="x">25.0</data>
+	<data key="y">60.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="749.5" y="-1800.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n30">
+	<data key="x">51.0</data>
+	<data key="y">64.0</data>
+	<data key="label">Central</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1522.5" y="-1927.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Central</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n34">
+	<data key="x">55.0</data>
+	<data key="y">72.0</data>
+	<data key="label">Circular Quay</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1645.0" y="-2161.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Circular Quay</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n123">
+	<data key="x">26.0</data>
+	<data key="y">61.0</data>
+	<data key="label">Regents Park</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="772.5" y="-1837.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Regents Park</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n66">
+	<data key="x">36.0</data>
+	<data key="y">80.0</data>
+	<data key="label">Hornsby</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1072.5" y="-2407.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Hornsby</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n17">
+	<data key="x">59.0</data>
+	<data key="y">70.0</data>
+	<data key="label">Bondi Junction</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1762.5" y="-2107.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Bondi Junction</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b2">
+	<data key="x">26.0</data>
+	<data key="y">66.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="779.5" y="-1980.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n53">
+	<data key="x">47.0</data>
+	<data key="y">60.0</data>
+	<data key="label">Erskineville</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1405.0" y="-1801.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Erskineville</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n140">
+	<data key="x">45.0</data>
+	<data key="y">58.0</data>
+	<data key="label">St Peters</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1345.0" y="-1741.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>St Peters</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n142">
+	<data key="x">39.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Strathfield</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1162.5" y="-1987.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Strathfield</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n26">
+	<data key="x">34.0</data>
+	<data key="y">73.0</data>
+	<data key="label">Carlingford</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1012.5" y="-2197.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Carlingford</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b7">
+	<data key="x">23.0</data>
+	<data key="y">67.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="689.5" y="-2010.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n170">
+	<data key="x">53.0</data>
+	<data key="y">72.0</data>
+	<data key="label">Wynyard</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1582.5" y="-2167.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Wynyard</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n126">
+	<data key="x">5.0</data>
+	<data key="y">86.0</data>
+	<data key="label">Richmond</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="142.5" y="-2587.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Richmond</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b11">
+	<data key="x">24.0</data>
+	<data key="y">67.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="719.5" y="-2010.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n58">
+	<data key="x">25.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Granville</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="742.5" y="-1987.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Granville</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n56">
+	<data key="x">8.0</data>
+	<data key="y">52.0</data>
+	<data key="label">Glenfield</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="232.5" y="-1567.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Glenfield</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n62">
+	<data key="x">23.0</data>
+	<data key="y">68.0</data>
+	<data key="label">Harris Park</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="682.5" y="-2047.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Harris Park</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n145">
+	<data key="x">43.0</data>
+	<data key="y">56.0</data>
+	<data key="label">Sydenham</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1282.5" y="-1687.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Sydenham</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n147">
+	<data key="x">41.0</data>
+	<data key="y">54.0</data>
+	<data key="label">Tempe</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1225.0" y="-1621.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Tempe</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n5">
+	<data key="x">29.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Auburn</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="865.0" y="-1981.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Auburn</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b9">
+	<data key="x">51.0</data>
+	<data key="y">70.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1529.5" y="-2100.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n94">
+	<data key="x">22.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Merrylands</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="652.5" y="-1987.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Merrylands</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n39">
+	<data key="x">33.0</data>
+	<data key="y">39.0</data>
+	<data key="label">Cronulla</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="982.5" y="-1177.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Cronulla</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n137">
+	<data key="x">55.0</data>
+	<data key="y">68.0</data>
+	<data key="label">St James</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1645.0" y="-2041.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>St James</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n122">
+	<data key="x">49.0</data>
+	<data key="y">62.0</data>
+	<data key="label">Redfern</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1462.5" y="-1867.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Redfern</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b3">
+	<data key="x">23.0</data>
+	<data key="y">66.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="689.5" y="-1980.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n29">
+	<data key="x">10.0</data>
+	<data key="y">54.0</data>
+	<data key="label">Casula</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="295.0" y="-1621.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Casula</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n103">
+	<data key="x">53.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Museum</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1582.5" y="-1987.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Museum</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="d0">
+	<data key="x">55.0</data>
+	<data key="y">70.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1649.5" y="-2100.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n86">
+	<data key="x">0.0</data>
+	<data key="y">44.0</data>
+	<data key="label">Macarthur</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="-7.5" y="-1327.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Macarthur</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n84">
+	<data key="x">12.0</data>
+	<data key="y">56.0</data>
+	<data key="label">Liverpool</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="352.5" y="-1687.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Liverpool</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b1">
+	<data key="x">26.0</data>
+	<data key="y">60.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="779.5" y="-1800.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n82">
+	<data key="x">31.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Lidcombe</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="922.5" y="-1987.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Lidcombe</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n135">
+	<data key="x">24.0</data>
+	<data key="y">60.0</data>
+	<data key="label">Sefton</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="712.5" y="-1807.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Sefton</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n50">
+	<data key="x">7.0</data>
+	<data key="y">75.0</data>
+	<data key="label">Emu Plains</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="202.5" y="-2257.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Emu Plains</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b5">
+	<data key="x">52.0</data>
+	<data key="y">65.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1559.5" y="-1950.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n16">
+	<data key="x">16.0</data>
+	<data key="y">75.0</data>
+	<data key="label">Blacktown</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="472.5" y="-2257.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Blacktown</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n12">
+	<data key="x">36.0</data>
+	<data key="y">85.0</data>
+	<data key="label">Berowra</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1072.5" y="-2557.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Berowra</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n158">
+	<data key="x">14.0</data>
+	<data key="y">58.0</data>
+	<data key="label">Warwick Farm</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="415.0" y="-1741.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Warwick Farm</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n65">
+	<data key="x">37.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Homebush</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1105.0" y="-1981.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Homebush</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n144">
+	<data key="x">26.0</data>
+	<data key="y">39.0</data>
+	<data key="label">Sutherland</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="772.5" y="-1177.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Sutherland</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n55">
+	<data key="x">35.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Flemington</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1042.5" y="-1987.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Flemington</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n19">
+	<data key="x">16.0</data>
+	<data key="y">60.0</data>
+	<data key="label">Cabramatta</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="472.5" y="-1807.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Cabramatta</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n21">
+	<data key="x">2.0</data>
+	<data key="y">46.0</data>
+	<data key="label">Campbelltown</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="52.5" y="-1387.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Campbelltown</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n167">
+	<data key="x">39.0</data>
+	<data key="y">52.0</data>
+	<data key="label">Wolli Creek</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1162.5" y="-1567.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Wolli Creek</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n110">
+	<data key="x">33.0</data>
+	<data key="y">68.0</data>
+	<data key="label">Olympic Park</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="985.0" y="-2041.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Olympic Park</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n108">
+	<data key="x">51.0</data>
+	<data key="y">76.0</data>
+	<data key="label">North Sydney</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1522.5" y="-2287.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>North Sydney</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b8">
+	<data key="x">25.0</data>
+	<data key="y">59.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="749.5" y="-1770.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n36">
+	<data key="x">27.0</data>
+	<data key="y">66.0</data>
+	<data key="label">Clyde</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="802.5" y="-1987.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Clyde</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b6">
+	<data key="x">32.0</data>
+	<data key="y">66.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="959.5" y="-1980.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n95">
+	<data key="x">53.0</data>
+	<data key="y">74.0</data>
+	<data key="label">Milsons Point</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1585.0" y="-2221.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Milsons Point</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="b10">
+	<data key="x">50.0</data>
+	<data key="y">63.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1499.5" y="-1890.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n91">
+	<data key="x">53.0</data>
+	<data key="y">70.0</data>
+	<data key="label">Martin Place</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1585.0" y="-2101.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Martin Place</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<node id="n150">
+	<data key="x">51.0</data>
+	<data key="y">68.0</data>
+	<data key="label">Town Hall</data>
+	<data key="regular">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1522.5" y="-2047.5" width="15.0" height="15.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel>Town Hall</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e0" source="n82" target="n110">
+	<data key="l9">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck0">
+	<data key="x">27.416666666666668</data>
+	<data key="y">56.583333333333336</data>
+	<data key="label">Yagoona</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="817.5" y="-1698.5" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Yagoona</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e1" source="n15" target="tck0">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n171">
+	<data key="x">28.0</data>
+	<data key="y">56.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="839.5" y="-1680.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e2" source="tck0" target="n171">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck1">
+	<data key="x">28.833333333333332</data>
+	<data key="y">56.0</data>
+	<data key="label">Bankstown</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="860.0" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Bankstown</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e3" source="n171" target="tck1">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n90">
+	<data key="x">30.0</data>
+	<data key="y">56.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="899.5" y="-1680.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e4" source="tck1" target="n90">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck2">
+	<data key="x">30.25</data>
+	<data key="y">56.0</data>
+	<data key="label">Punchbowl</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="902.5" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Punchbowl</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e5" source="n90" target="tck2">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck3">
+	<data key="x">31.666666666666668</data>
+	<data key="y">56.0</data>
+	<data key="label">Wiley Park</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="945.0" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Wiley Park</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e6" source="tck2" target="tck3">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck4">
+	<data key="x">33.083333333333336</data>
+	<data key="y">56.0</data>
+	<data key="label">Lakemba</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="987.5000000000001" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Lakemba</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e7" source="tck3" target="tck4">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck5">
+	<data key="x">34.5</data>
+	<data key="y">56.0</data>
+	<data key="label">Belmore</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1030.0" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Belmore</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e8" source="tck4" target="tck5">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck6">
+	<data key="x">35.91666666666667</data>
+	<data key="y">56.0</data>
+	<data key="label">Campsie</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1072.5000000000002" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Campsie</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e9" source="tck5" target="tck6">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck7">
+	<data key="x">37.333333333333336</data>
+	<data key="y">56.0</data>
+	<data key="label">Canterbury</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1115.0" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Canterbury</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e10" source="tck6" target="tck7">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck8">
+	<data key="x">38.75</data>
+	<data key="y">56.0</data>
+	<data key="label">Hurlstone Park</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1157.5" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Hurlstone Park</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e11" source="tck7" target="tck8">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck9">
+	<data key="x">40.16666666666667</data>
+	<data key="y">56.0</data>
+	<data key="label">Dulwich Hill</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1200.0000000000002" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Dulwich Hill</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e12" source="tck8" target="tck9">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck10">
+	<data key="x">41.583333333333336</data>
+	<data key="y">56.0</data>
+	<data key="label">Marrickville</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1242.5" y="-1681.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Marrickville</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e13" source="tck9" target="tck10">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e14" source="tck10" target="n145">
+	<data key="l3">true</data>
+	<data key="annotTarget1">e31</data>
+	<data key="annotTarget2">same</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e15" source="n103" target="n137">
+	<data key="l3">true</data>
+	<data key="l4">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e16" source="n34" target="n170">
+	<data key="l3">true</data>
+	<data key="l4">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e17" source="n122" target="b10">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l3">true</data>
+	<data key="l5">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e18" source="n150" target="b9">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+	<data key="annotSource1">e140</data>
+	<data key="annotSource2">same</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e19" source="n62" target="b7">
+	<data key="l7">true</data>
+	<data key="annotSource1">e29</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e20" source="n15" target="b8">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e21" source="n62" target="b11">
+	<data key="l0">true</data>
+	<data key="annotSource1">e29</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e22" source="n5" target="n82">
+	<data key="l0">true</data>
+	<data key="l8">true</data>
+	<data key="annotTarget1">e77</data>
+	<data key="annotTarget2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck11">
+	<data key="x">17.0</data>
+	<data key="y">74.0</data>
+	<data key="label">Seven Hills</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="505.0" y="-2221.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Seven Hills</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e23" source="n16" target="tck11">
+	<data key="l0">true</data>
+	<data key="l7">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck12">
+	<data key="x">18.0</data>
+	<data key="y">73.0</data>
+	<data key="label">Toongabbie</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="535.0" y="-2191.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Toongabbie</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e24" source="tck11" target="tck12">
+	<data key="l0">true</data>
+	<data key="l7">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck13">
+	<data key="x">19.0</data>
+	<data key="y">72.0</data>
+	<data key="label">Pendle Hill</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="565.0" y="-2161.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Pendle Hill</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e25" source="tck12" target="tck13">
+	<data key="l0">true</data>
+	<data key="l7">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck14">
+	<data key="x">20.0</data>
+	<data key="y">71.0</data>
+	<data key="label">Wentworthville</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="595.0" y="-2131.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Wentworthville</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e26" source="tck13" target="tck14">
+	<data key="l0">true</data>
+	<data key="l7">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck15">
+	<data key="x">21.0</data>
+	<data key="y">70.0</data>
+	<data key="label">Westmead</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="625.0" y="-2101.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Westmead</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e27" source="tck14" target="tck15">
+	<data key="l0">true</data>
+	<data key="l7">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck16">
+	<data key="x">22.0</data>
+	<data key="y">69.0</data>
+	<data key="label">Parramatta</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="655.0" y="-2071.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Parramatta</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e28" source="tck15" target="tck16">
+	<data key="l0">true</data>
+	<data key="l7">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e29" source="tck16" target="n62">
+	<data key="l0">true</data>
+	<data key="l7">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e30" source="n55" target="n65">
+	<data key="l0">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e31" source="n147" target="n145">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e32" source="n123" target="b1">
+	<data key="l3">true</data>
+	<data key="annotSource1">e182</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck17">
+	<data key="x">10.384615384615385</data>
+	<data key="y">52.0</data>
+	<data key="label">Holsworthy</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="306.53846153846155" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Holsworthy</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e33" source="n56" target="tck17">
+	<data key="l4">true</data>
+	<data key="annotSource1">e193</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck18">
+	<data key="x">12.76923076923077</data>
+	<data key="y">52.0</data>
+	<data key="label">East Hills</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="378.0769230769231" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>East Hills</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e34" source="tck17" target="tck18">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck19">
+	<data key="x">15.153846153846153</data>
+	<data key="y">52.0</data>
+	<data key="label">Panania</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="449.6153846153846" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Panania</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e35" source="tck18" target="tck19">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n64">
+	<data key="x">17.0</data>
+	<data key="y">52.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="509.5" y="-1560.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e36" source="tck19" target="n64">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck20">
+	<data key="x">17.53846153846154</data>
+	<data key="y">52.0</data>
+	<data key="label">Revesby</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="521.1538461538462" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Revesby</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e37" source="n64" target="tck20">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck21">
+	<data key="x">19.923076923076923</data>
+	<data key="y">52.0</data>
+	<data key="label">Padstow</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="592.6923076923077" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Padstow</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e38" source="tck20" target="tck21">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck22">
+	<data key="x">22.307692307692307</data>
+	<data key="y">52.0</data>
+	<data key="label">Riverwood</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="664.2307692307692" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Riverwood</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e39" source="tck21" target="tck22">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck23">
+	<data key="x">24.692307692307693</data>
+	<data key="y">52.0</data>
+	<data key="label">Narwee</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="735.7692307692308" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Narwee</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e40" source="tck22" target="tck23">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck24">
+	<data key="x">27.076923076923077</data>
+	<data key="y">52.0</data>
+	<data key="label">Beverly Hills</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="807.3076923076923" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Beverly Hills</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e41" source="tck23" target="tck24">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck25">
+	<data key="x">29.46153846153846</data>
+	<data key="y">52.0</data>
+	<data key="label">Kingsgrove</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="878.8461538461538" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Kingsgrove</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e42" source="tck24" target="tck25">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck26">
+	<data key="x">31.846153846153847</data>
+	<data key="y">52.0</data>
+	<data key="label">Bexley North</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="950.3846153846154" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Bexley North</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e43" source="tck25" target="tck26">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck27">
+	<data key="x">34.230769230769226</data>
+	<data key="y">52.0</data>
+	<data key="label">Bardwell Park</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1021.9230769230767" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Bardwell Park</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e44" source="tck26" target="tck27">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck28">
+	<data key="x">36.61538461538461</data>
+	<data key="y">52.0</data>
+	<data key="label">Turrella</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1093.4615384615383" y="-1561.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Turrella</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e45" source="tck27" target="tck28">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n152">
+	<data key="x">37.0</data>
+	<data key="y">52.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1109.5" y="-1560.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e46" source="tck28" target="n152">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e47" source="n152" target="n167">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e48" source="n150" target="b0">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l5">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+	<data key="annotSource1">e140</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e49" source="n170" target="n95">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="annotSource1">e16</data>
+	<data key="annotSource2">same</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck29">
+	<data key="x">50.0</data>
+	<data key="y">77.0</data>
+	<data key="label">Waverton</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1495.0" y="-2311.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Waverton</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e50" source="n108" target="tck29">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck30">
+	<data key="x">49.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Wollstonecraft</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1465.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Wollstonecraft</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e51" source="tck29" target="tck30">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck31">
+	<data key="x">48.0</data>
+	<data key="y">78.0</data>
+	<data key="label">St Leonards</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1435.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>St Leonards</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e52" source="tck30" target="tck31">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck32">
+	<data key="x">47.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Artarmon</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1405.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Artarmon</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e53" source="tck31" target="tck32">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck33">
+	<data key="x">46.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Chatswood</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1375.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Chatswood</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e54" source="tck32" target="tck33">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck34">
+	<data key="x">45.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Roseville</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1345.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Roseville</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e55" source="tck33" target="tck34">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck35">
+	<data key="x">44.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Lindfield</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1315.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Lindfield</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e56" source="tck34" target="tck35">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck36">
+	<data key="x">43.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Killara</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1285.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Killara</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e57" source="tck35" target="tck36">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck37">
+	<data key="x">42.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Gordon</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1255.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Gordon</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e58" source="tck36" target="tck37">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck38">
+	<data key="x">41.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Pymble</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1225.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Pymble</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e59" source="tck37" target="tck38">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck39">
+	<data key="x">40.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Turramurra</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1195.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Turramurra</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e60" source="tck38" target="tck39">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck40">
+	<data key="x">39.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Warrawee</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1165.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Warrawee</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e61" source="tck39" target="tck40">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck41">
+	<data key="x">38.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Wahroonga</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1135.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Wahroonga</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e62" source="tck40" target="tck41">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck42">
+	<data key="x">37.0</data>
+	<data key="y">79.0</data>
+	<data key="label">Waitara</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1105.0" y="-2371.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Waitara</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e63" source="tck41" target="tck42">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e64" source="tck42" target="n66">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e65" source="n84" target="n29">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e66" source="n91" target="d0">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck43">
+	<data key="x">8.125</data>
+	<data key="y">75.0</data>
+	<data key="label">Penrith</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="238.75" y="-2251.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Penrith</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e67" source="n50" target="tck43">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck44">
+	<data key="x">9.25</data>
+	<data key="y">75.0</data>
+	<data key="label">Kingswood</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="272.5" y="-2251.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Kingswood</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e68" source="tck43" target="tck44">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck45">
+	<data key="x">10.375</data>
+	<data key="y">75.0</data>
+	<data key="label">Werrington</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="306.25" y="-2251.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Werrington</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e69" source="tck44" target="tck45">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck46">
+	<data key="x">11.5</data>
+	<data key="y">75.0</data>
+	<data key="label">St Marys</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="340.0" y="-2251.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>St Marys</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e70" source="tck45" target="tck46">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck47">
+	<data key="x">12.625</data>
+	<data key="y">75.0</data>
+	<data key="label">Mt Druitt</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="373.75" y="-2251.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Mt Druitt</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e71" source="tck46" target="tck47">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck48">
+	<data key="x">13.75</data>
+	<data key="y">75.0</data>
+	<data key="label">Rooty Hill</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="407.5" y="-2251.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Rooty Hill</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e72" source="tck47" target="tck48">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n43">
+	<data key="x">14.0</data>
+	<data key="y">75.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="419.5" y="-2250.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e73" source="tck48" target="n43">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck49">
+	<data key="x">14.875</data>
+	<data key="y">75.0</data>
+	<data key="label">Doonside</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="441.25" y="-2251.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Doonside</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e74" source="n43" target="tck49">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e75" source="tck49" target="n16">
+	<data key="l0">true</data>
+	<data key="annotTarget1">e23</data>
+	<data key="annotTarget2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e76" source="n30" target="b5">
+	<data key="l3">true</data>
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e77" source="n82" target="b6">
+	<data key="l0">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e78" source="n94" target="b3">
+	<data key="l8">true</data>
+	<data key="annotSource1">e146</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e79" source="n135" target="b4">
+	<data key="l6">true</data>
+	<data key="annotSource1">e213</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck50">
+	<data key="x">56.333333333333336</data>
+	<data key="y">70.0</data>
+	<data key="label">Kings Cross</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1685.0" y="-2101.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Kings Cross</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e80" source="d0" target="tck50">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n73">
+	<data key="x">57.0</data>
+	<data key="y">70.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1709.5" y="-2100.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e81" source="tck50" target="n73">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck51">
+	<data key="x">57.666666666666664</data>
+	<data key="y">70.0</data>
+	<data key="label">Edgecliff</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1725.0" y="-2101.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Edgecliff</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e82" source="n73" target="tck51">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e83" source="tck51" target="n17">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck52">
+	<data key="x">22.25</data>
+	<data key="y">35.25</data>
+	<data key="label">Heathcote</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="662.5" y="-1058.5" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Heathcote</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e84" source="n159" target="tck52">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck53">
+	<data key="x">23.5</data>
+	<data key="y">36.5</data>
+	<data key="label">Engadine</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="700.0" y="-1096.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Engadine</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e85" source="tck52" target="tck53">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n85">
+	<data key="x">24.0</data>
+	<data key="y">37.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="719.5" y="-1110.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e86" source="tck53" target="n85">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck54">
+	<data key="x">24.75</data>
+	<data key="y">37.75</data>
+	<data key="label">Loftus</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="737.5" y="-1133.5" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Loftus</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e87" source="n85" target="tck54">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e88" source="tck54" target="n144">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e89" source="n53" target="n122">
+	<data key="l3">true</data>
+	<data key="l5">true</data>
+	<data key="annotTarget1">e17</data>
+	<data key="annotTarget2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e90" source="n145" target="n140">
+	<data key="l3">true</data>
+	<data key="l5">true</data>
+	<data key="annotSource1">e31</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e91" source="n34" target="d0">
+	<data key="l3">true</data>
+	<data key="l4">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck55">
+	<data key="x">36.0</data>
+	<data key="y">83.75</data>
+	<data key="label">Mt Kuring-gai</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2513.5" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Mt Kuring-gai</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e92" source="n12" target="tck55">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck56">
+	<data key="x">36.0</data>
+	<data key="y">82.5</data>
+	<data key="label">Mt Colah</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2476.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Mt Colah</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e93" source="tck55" target="tck56">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n4">
+	<data key="x">36.0</data>
+	<data key="y">82.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1079.5" y="-2460.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e94" source="tck56" target="n4">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck57">
+	<data key="x">36.0</data>
+	<data key="y">81.25</data>
+	<data key="label">Asquith</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2438.5" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Asquith</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e95" source="n4" target="tck57">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e96" source="tck57" target="n66">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e97" source="n19" target="n158">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck58">
+	<data key="x">14.9</data>
+	<data key="y">76.1</data>
+	<data key="label">Marayong</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="442.0" y="-2284.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Marayong</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e98" source="n16" target="tck58">
+	<data key="l0">true</data>
+	<data key="annotSource1">e23</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n89">
+	<data key="x">14.0</data>
+	<data key="y">77.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="419.5" y="-2310.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e99" source="tck58" target="n89">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck59">
+	<data key="x">13.8</data>
+	<data key="y">77.2</data>
+	<data key="label">Quakers Hill</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="409.0" y="-2317.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Quakers Hill</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e100" source="n89" target="tck59">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck60">
+	<data key="x">12.7</data>
+	<data key="y">78.3</data>
+	<data key="label">Schofields</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="376.0" y="-2350.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Schofields</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e101" source="tck59" target="tck60">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck61">
+	<data key="x">11.6</data>
+	<data key="y">79.4</data>
+	<data key="label">Riverstone</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="343.0" y="-2383.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Riverstone</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e102" source="tck60" target="tck61">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck62">
+	<data key="x">10.5</data>
+	<data key="y">80.5</data>
+	<data key="label">Vineyard</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="310.0" y="-2416.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Vineyard</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e103" source="tck61" target="tck62">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck63">
+	<data key="x">9.4</data>
+	<data key="y">81.6</data>
+	<data key="label">Mulgrave</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="277.0" y="-2449.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Mulgrave</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e104" source="tck62" target="tck63">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck64">
+	<data key="x">8.299999999999999</data>
+	<data key="y">82.7</data>
+	<data key="label">Windsor</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="243.99999999999997" y="-2482.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Windsor</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e105" source="tck63" target="tck64">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck65">
+	<data key="x">7.199999999999999</data>
+	<data key="y">83.8</data>
+	<data key="label">Clarendon</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="210.99999999999997" y="-2515.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Clarendon</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e106" source="tck64" target="tck65">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck66">
+	<data key="x">6.1</data>
+	<data key="y">84.9</data>
+	<data key="label">East Richmond</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="178.0" y="-2548.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>East Richmond</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e107" source="tck65" target="tck66">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e108" source="tck66" target="n126">
+	<data key="l0">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n59">
+	<data key="x">51.0</data>
+	<data key="y">62.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1529.5" y="-1860.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e109" source="n30" target="n59">
+	<data key="l4">true</data>
+	<data key="annotSource1">e76</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck67">
+	<data key="x">50.2</data>
+	<data key="y">61.2</data>
+	<data key="label">Green Square</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1501.0" y="-1837.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Green Square</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e110" source="n59" target="tck67">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck68">
+	<data key="x">47.4</data>
+	<data key="y">58.4</data>
+	<data key="label">Mascot</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1417.0" y="-1753.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Mascot</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e111" source="tck67" target="tck68">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck69">
+	<data key="x">44.6</data>
+	<data key="y">55.6</data>
+	<data key="label">Domestic</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1333.0" y="-1669.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Domestic</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e112" source="tck68" target="tck69">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck70">
+	<data key="x">41.8</data>
+	<data key="y">52.8</data>
+	<data key="label">International</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1249.0" y="-1585.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>International</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e113" source="tck69" target="tck70">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n70">
+	<data key="x">41.0</data>
+	<data key="y">52.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1229.5" y="-1560.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e114" source="tck70" target="n70">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e115" source="n70" target="n167">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck71">
+	<data key="x">27.166666666666668</data>
+	<data key="y">39.0</data>
+	<data key="label">Kirrawee</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="810.0" y="-1171.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Kirrawee</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e116" source="n144" target="tck71">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n76">
+	<data key="x">28.0</data>
+	<data key="y">39.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="839.5" y="-1170.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e117" source="tck71" target="n76">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck72">
+	<data key="x">28.333333333333332</data>
+	<data key="y">39.0</data>
+	<data key="label">Gymea</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="845.0" y="-1171.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Gymea</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e118" source="n76" target="tck72">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck73">
+	<data key="x">29.5</data>
+	<data key="y">39.0</data>
+	<data key="label">Miranda</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="880.0" y="-1171.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Miranda</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e119" source="tck72" target="tck73">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck74">
+	<data key="x">30.666666666666668</data>
+	<data key="y">39.0</data>
+	<data key="label">Caringbah</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="915.0" y="-1171.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Caringbah</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e120" source="tck73" target="tck74">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck75">
+	<data key="x">31.833333333333336</data>
+	<data key="y">39.0</data>
+	<data key="label">Woolooware</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="950.0000000000001" y="-1171.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Woolooware</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e121" source="tck74" target="tck75">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e122" source="tck75" target="n39">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e123" source="n11" target="n82">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+	<data key="annotTarget1">e77</data>
+	<data key="annotTarget2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e124" source="n58" target="b11">
+	<data key="l0">true</data>
+	<data key="annotSource1">e145</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ffd700" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck76">
+	<data key="x">27.0</data>
+	<data key="y">40.0</data>
+	<data key="label">Jannali</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="805.0" y="-1201.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Jannali</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e125" source="n144" target="tck76">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck77">
+	<data key="x">28.0</data>
+	<data key="y">41.0</data>
+	<data key="label">Como</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="835.0" y="-1231.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Como</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e126" source="tck76" target="tck77">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck78">
+	<data key="x">29.0</data>
+	<data key="y">42.0</data>
+	<data key="label">Oatley</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="865.0" y="-1261.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Oatley</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e127" source="tck77" target="tck78">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck79">
+	<data key="x">30.0</data>
+	<data key="y">43.0</data>
+	<data key="label">Mortdale</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="895.0" y="-1291.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Mortdale</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e128" source="tck78" target="tck79">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck80">
+	<data key="x">31.0</data>
+	<data key="y">44.0</data>
+	<data key="label">Penshurst</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="925.0" y="-1321.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Penshurst</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e129" source="tck79" target="tck80">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck81">
+	<data key="x">32.0</data>
+	<data key="y">45.0</data>
+	<data key="label">Hurstville</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="955.0" y="-1351.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Hurstville</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e130" source="tck80" target="tck81">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck82">
+	<data key="x">33.0</data>
+	<data key="y">46.0</data>
+	<data key="label">Allawah</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="985.0" y="-1381.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Allawah</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e131" source="tck81" target="tck82">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck83">
+	<data key="x">34.0</data>
+	<data key="y">47.0</data>
+	<data key="label">Carlton</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1015.0" y="-1411.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Carlton</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e132" source="tck82" target="tck83">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck84">
+	<data key="x">35.0</data>
+	<data key="y">48.0</data>
+	<data key="label">Kogarah</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1045.0" y="-1441.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Kogarah</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e133" source="tck83" target="tck84">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck85">
+	<data key="x">36.0</data>
+	<data key="y">49.0</data>
+	<data key="label">Rockdale</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-1471.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Rockdale</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e134" source="tck84" target="tck85">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck86">
+	<data key="x">37.0</data>
+	<data key="y">50.0</data>
+	<data key="label">Banksia</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1105.0" y="-1501.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Banksia</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e135" source="tck85" target="tck86">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck87">
+	<data key="x">38.0</data>
+	<data key="y">51.0</data>
+	<data key="label">Arncliffe</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1135.0" y="-1531.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Arncliffe</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e136" source="tck86" target="tck87">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e137" source="tck87" target="n167">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e138" source="n15" target="b1">
+	<data key="l3">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e139" source="n95" target="n108">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e140" source="n150" target="n91">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e141" source="n21" target="n86">
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e142" source="n65" target="n142">
+	<data key="l0">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+	<data key="annotTarget1">e192</data>
+	<data key="annotTarget2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e143" source="n36" target="n5">
+	<data key="l0">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e144" source="n167" target="n147">
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e145" source="n58" target="b2">
+	<data key="l0">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck88">
+	<data key="x">20.8</data>
+	<data key="y">64.8</data>
+	<data key="label">Guildford</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="619.0" y="-1945.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Guildford</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e146" source="n94" target="tck88">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n60">
+	<data key="x">20.0</data>
+	<data key="y">64.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="599.5" y="-1920.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e147" source="tck88" target="n60">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck89">
+	<data key="x">19.6</data>
+	<data key="y">63.6</data>
+	<data key="label">Yennora</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="583.0" y="-1909.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Yennora</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e148" source="n60" target="tck89">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck90">
+	<data key="x">18.4</data>
+	<data key="y">62.4</data>
+	<data key="label">Fairfield</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="547.0" y="-1873.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Fairfield</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e149" source="tck89" target="tck90">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n23">
+	<data key="x">18.0</data>
+	<data key="y">62.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="539.5" y="-1860.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e150" source="tck90" target="n23">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck91">
+	<data key="x">17.2</data>
+	<data key="y">61.2</data>
+	<data key="label">Canley Vale</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="511.0" y="-1837.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Canley Vale</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e151" source="n23" target="tck91">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e152" source="tck91" target="n19">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+	<data key="annotTarget1">e97</data>
+	<data key="annotTarget2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck92">
+	<data key="x">38.0</data>
+	<data key="y">67.0</data>
+	<data key="label">North Strathfield</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1135.0" y="-2011.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>North Strathfield</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e153" source="n142" target="tck92">
+	<data key="l1">true</data>
+	<data key="annotSource1">e192</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck93">
+	<data key="x">37.0</data>
+	<data key="y">68.0</data>
+	<data key="label">Concord West</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1105.0" y="-2041.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Concord West</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e154" source="tck92" target="tck93">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck94">
+	<data key="x">36.0</data>
+	<data key="y">69.0</data>
+	<data key="label">Rhodes</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2071.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Rhodes</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e155" source="tck93" target="tck94">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck95">
+	<data key="x">36.0</data>
+	<data key="y">70.0</data>
+	<data key="label">Meadowbank</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2101.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Meadowbank</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e156" source="tck94" target="tck95">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck96">
+	<data key="x">36.0</data>
+	<data key="y">71.0</data>
+	<data key="label">West Ryde</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2131.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>West Ryde</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e157" source="tck95" target="tck96">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck97">
+	<data key="x">36.0</data>
+	<data key="y">72.0</data>
+	<data key="label">Denistone</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2161.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Denistone</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e158" source="tck96" target="tck97">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck98">
+	<data key="x">36.0</data>
+	<data key="y">73.0</data>
+	<data key="label">Eastwood</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2191.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Eastwood</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e159" source="tck97" target="tck98">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck99">
+	<data key="x">36.0</data>
+	<data key="y">74.0</data>
+	<data key="label">Epping</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2221.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Epping</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e160" source="tck98" target="tck99">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck100">
+	<data key="x">36.0</data>
+	<data key="y">75.0</data>
+	<data key="label">Cheltenham</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2251.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Cheltenham</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e161" source="tck99" target="tck100">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck101">
+	<data key="x">36.0</data>
+	<data key="y">76.0</data>
+	<data key="label">Beecroft</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2281.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Beecroft</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e162" source="tck100" target="tck101">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck102">
+	<data key="x">36.0</data>
+	<data key="y">77.0</data>
+	<data key="label">Pennant Hills</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2311.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Pennant Hills</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e163" source="tck101" target="tck102">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck103">
+	<data key="x">36.0</data>
+	<data key="y">78.0</data>
+	<data key="label">Thornleigh</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2341.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Thornleigh</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e164" source="tck102" target="tck103">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck104">
+	<data key="x">36.0</data>
+	<data key="y">79.0</data>
+	<data key="label">Normanhurst</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1075.0" y="-2371.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Normanhurst</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e165" source="tck103" target="tck104">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e166" source="tck104" target="n66">
+	<data key="l1">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff0000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e167" source="n30" target="b0">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l5">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+	<data key="annotSource1">e76</data>
+	<data key="annotSource2">same</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck105">
+	<data key="x">32.833333333333336</data>
+	<data key="y">71.83333333333333</data>
+	<data key="label">Telopea</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="980.0000000000001" y="-2156.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Telopea</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e168" source="n26" target="tck105">
+	<data key="l2">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000080" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck106">
+	<data key="x">31.666666666666668</data>
+	<data key="y">70.66666666666667</data>
+	<data key="label">Dundas</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="945.0" y="-2121.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Dundas</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e169" source="tck105" target="tck106">
+	<data key="l2">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000080" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck107">
+	<data key="x">30.5</data>
+	<data key="y">69.5</data>
+	<data key="label">Rydalmere</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="910.0" y="-2086.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Rydalmere</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e170" source="tck106" target="tck107">
+	<data key="l2">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000080" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck108">
+	<data key="x">29.333333333333332</data>
+	<data key="y">68.33333333333333</data>
+	<data key="label">Camellia</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="875.0" y="-2051.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Camellia</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e171" source="tck107" target="tck108">
+	<data key="l2">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000080" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n131">
+	<data key="x">29.0</data>
+	<data key="y">68.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="869.5" y="-2040.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e172" source="tck108" target="n131">
+	<data key="l2">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000080" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck109">
+	<data key="x">28.166666666666668</data>
+	<data key="y">67.16666666666667</data>
+	<data key="label">Rosehill</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="840.0" y="-2016.0000000000002" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Rosehill</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e173" source="n131" target="tck109">
+	<data key="l2">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000080" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e174" source="tck109" target="n36">
+	<data key="l2">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000080" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e175" source="n110" target="n55">
+	<data key="l9">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#000000" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e176" source="n30" target="b10">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l3">true</data>
+	<data key="l5">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+	<data key="annotSource1">e76</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e177" source="n94" target="b7">
+	<data key="l7">true</data>
+	<data key="annotSource1">e146</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#c71585" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e178" source="n170" target="b9">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+	<data key="annotSource1">e16</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e179" source="n135" target="b8">
+	<data key="l3">true</data>
+	<data key="annotSource1">e213</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#ff8c00" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e180" source="n36" target="b2">
+	<data key="l0">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e181" source="n123" target="b4">
+	<data key="l6">true</data>
+	<data key="annotSource1">e182</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e182" source="n123" target="n11">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck110">
+	<data key="x">48.0</data>
+	<data key="y">62.0</data>
+	<data key="label">Macdonaldtown</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1435.0" y="-1861.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Macdonaldtown</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e183" source="n122" target="tck110">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+	<data key="annotSource1">e17</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck111">
+	<data key="x">47.0</data>
+	<data key="y">62.0</data>
+	<data key="label">Newtown</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1405.0" y="-1861.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Newtown</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e184" source="tck110" target="tck111">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck112">
+	<data key="x">46.0</data>
+	<data key="y">62.0</data>
+	<data key="label">Stanmore</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1375.0" y="-1861.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Stanmore</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e185" source="tck111" target="tck112">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck113">
+	<data key="x">45.0</data>
+	<data key="y">62.0</data>
+	<data key="label">Petersham</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1345.0" y="-1861.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Petersham</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e186" source="tck112" target="tck113">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck114">
+	<data key="x">44.0</data>
+	<data key="y">62.0</data>
+	<data key="label">Lewisham</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1315.0" y="-1861.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Lewisham</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e187" source="tck113" target="tck114">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck115">
+	<data key="x">43.0</data>
+	<data key="y">62.0</data>
+	<data key="label">Summer Hill</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1285.0" y="-1861.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Summer Hill</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e188" source="tck114" target="tck115">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck116">
+	<data key="x">42.0</data>
+	<data key="y">63.0</data>
+	<data key="label">Ashfield</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1255.0" y="-1891.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Ashfield</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e189" source="tck115" target="tck116">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck117">
+	<data key="x">41.0</data>
+	<data key="y">64.0</data>
+	<data key="label">Croydon</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1225.0" y="-1921.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Croydon</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e190" source="tck116" target="tck117">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck118">
+	<data key="x">40.0</data>
+	<data key="y">65.0</data>
+	<data key="label">Burwood</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="1195.0" y="-1951.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Burwood</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e191" source="tck117" target="tck118">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e192" source="tck118" target="n142">
+	<data key="l0">true</data>
+	<data key="l1">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck119">
+	<data key="x">6.8</data>
+	<data key="y">50.8</data>
+	<data key="label">Macquarie Fields</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="199.0" y="-1525.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Macquarie Fields</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e193" source="n56" target="tck119">
+	<data key="l4">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n88">
+	<data key="x">6.0</data>
+	<data key="y">50.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="179.5" y="-1500.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e194" source="tck119" target="n88">
+	<data key="l4">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck120">
+	<data key="x">5.6</data>
+	<data key="y">49.6</data>
+	<data key="label">Ingleburn</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="163.0" y="-1489.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Ingleburn</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e195" source="n88" target="tck120">
+	<data key="l4">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck121">
+	<data key="x">4.4</data>
+	<data key="y">48.4</data>
+	<data key="label">Minto</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="127.0" y="-1453.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Minto</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e196" source="tck120" target="tck121">
+	<data key="l4">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n80">
+	<data key="x">4.0</data>
+	<data key="y">48.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="119.5" y="-1440.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e197" source="tck121" target="n80">
+	<data key="l4">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck122">
+	<data key="x">3.2</data>
+	<data key="y">47.2</data>
+	<data key="label">Leumeah</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="91.0" y="-1417.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Leumeah</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e198" source="n80" target="tck122">
+	<data key="l4">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e199" source="tck122" target="n21">
+	<data key="l4">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e200" source="n58" target="b3">
+	<data key="l8">true</data>
+	<data key="annotSource1">e145</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e201" source="n103" target="b5">
+	<data key="l3">true</data>
+	<data key="l4">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#228b22" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e202" source="n158" target="n84">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e203" source="d0" target="n137">
+	<data key="l3">true</data>
+	<data key="l4">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e204" source="n29" target="n56">
+	<data key="l7">true</data>
+	<data key="l8">true</data>
+	<data key="annotTarget1">e193</data>
+	<data key="annotTarget2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e205" source="n140" target="n53">
+	<data key="l3">true</data>
+	<data key="l5">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6495ed" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e206" source="n55" target="b6">
+	<data key="l0">true</data>
+	<data key="l6">true</data>
+	<data key="l8">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#87cefa" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck123">
+	<data key="x">17.6</data>
+	<data key="y">60.0</data>
+	<data key="label">Carramar</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="523.0" y="-1801.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Carramar</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e207" source="n19" target="tck123">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+	<data key="annotSource1">e97</data>
+	<data key="annotSource2">different</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n28">
+	<data key="x">18.0</data>
+	<data key="y">60.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="539.5" y="-1800.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e208" source="tck123" target="n28">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck124">
+	<data key="x">19.2</data>
+	<data key="y">60.0</data>
+	<data key="label">Villawood</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="571.0" y="-1801.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Villawood</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e209" source="n28" target="tck124">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="n33">
+	<data key="x">20.0</data>
+	<data key="y">60.0</data>
+	<data key="label"></data>
+	<data key="dummy">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="599.5" y="-1800.5" width="1.0" height="1.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="circle"/>
+<y:NodeLabel></y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e210" source="tck124" target="n33">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck125">
+	<data key="x">20.8</data>
+	<data key="y">60.0</data>
+	<data key="label">Leightonfield</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="619.0" y="-1801.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Leightonfield</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e211" source="n33" target="tck125">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<node id="tck126">
+	<data key="x">22.4</data>
+	<data key="y">60.0</data>
+	<data key="label">Chester Hill</data>
+	<data key="tick">true</data>
+<data key="d0">
+<y:ShapeNode >
+<y:Geometry  x="667.0" y="-1801.0" width="10.0" height="2.0"/>
+<y:Fill color="#FFFFFF"  transparent="false"/>
+<y:BorderStyle type="line" width="4.0" color="#000000" />
+<y:Shape type="rectangle"/>
+<y:NodeLabel>Chester Hill</y:NodeLabel>
+</y:ShapeNode>
+</data>
+</node>
+<edge id="e212" source="tck125" target="tck126">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+<edge id="e213" source="tck126" target="n135">
+	<data key="l3">true</data>
+	<data key="l6">true</data>
+<data key="d1">
+<y:PolyLineEdge >
+<y:LineStyle type="line" width="4.0" color="#6a5acd" />
+<y:Arrows source="none" target="none"/>
+</y:PolyLineEdge>
+</data>
+</edge>
+</graph>
+</graphml>
