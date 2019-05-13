@@ -1,4 +1,4 @@
-
+//add station list, add line dependency
 public class Station {
 	private double xCoord;
 	private double yCoord;

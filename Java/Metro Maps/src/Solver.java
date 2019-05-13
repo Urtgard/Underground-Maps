@@ -18,7 +18,8 @@ public class Solver {
 
 			// expressions
 
-			// objective
+			// objective, add minimal distance between stations
+	
 			IloLinearNumExpr objective = cplex.linearNumExpr();
 			for (int i = 0; i < n; i++) {
 				objective.addTerm(x[i], 1);
