@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -120,17 +121,41 @@ public class XMLParser {
 					} else {
 						line = map.getLine(name);
 					}
-					line.addStation(source);
-					line.addStation(target);
+					line.addStations(source, target);
 				}
 			}
 		}
 
-		for (Map.Entry<String, Line> line : map.getLines().entrySet()) {
-			Line l = line.getValue();
-			l.getStations().removeIf(s -> s.isDummy() == true);
+		// remove dummy stations and sort lines
+		for (Map.Entry<String, Line> l : map.getLines().entrySet()) {
+			Line line = l.getValue();
+			Iterator<Station> itr = line.getStations().iterator();
+			while (itr.hasNext()) {
+				Station station = itr.next();
+				if (station.isDummy() == true) {
+					for (Line ll : station.getLines()) {
+						Station stationA = station;
+						Station stationB = station;
+						boolean first = true;
+						for (Station s : station.getAdjacentStations()) {
+							if (s.getLines().indexOf(ll) != -1) {
+								if (first == true) {
+									stationA = s;
+									first = false;
+								} else {
+									stationB = s;
+									break;
+								}
+							}
+						}
+						stationA.addAdjacentStation(stationB);
+						stationB.addAdjacentStation(stationA);
+					}
+					itr.remove();
+				}
+			}
+			line.sort();
 		}
-
 		return map;
 	}
 
@@ -138,14 +163,14 @@ public class XMLParser {
 		Station[] stations = map.getStationsArray();
 		int width = 20;
 		int height = 20;
-		for (double value:x){
+		for (double value : x) {
 			if (value > width) {
-				width =(int)Math.round(value);
+				width = (int) Math.round(value);
 			}
 		}
-		for (double value:y){
+		for (double value : y) {
 			if (value > height) {
-				height =(int)Math.round(value);
+				height = (int) Math.round(value);
 			}
 		}
 		width += 14 + 200;
@@ -158,20 +183,19 @@ public class XMLParser {
 		graphics.fillRect(0, 0, width, height);
 		graphics.setColor(Color.BLACK);
 		graphics.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		
+
 		int i = 0;
-		for (Station station : stations){
-			graphics.drawString(station.getName(), (int)Math.round(x[i]), height - (int)Math.round(y[i]));
+		for (Station station : stations) {
+			graphics.drawString(station.getName(), (int) Math.round(x[i]), height - (int) Math.round(y[i]));
 			i++;
 		}
-		
 
 		try {
 			ImageIO.write(bufferedImage, "png", new File("map.png"));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
+
 		System.out.println("Image Created");
 	}
 }
