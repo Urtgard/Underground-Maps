@@ -27,7 +27,7 @@ public class Solver {
 			
 			// expressions
 
-			// objective, add minimal distance between stations
+			// objective, das ist ein test
 	
 			IloLinearNumExpr objective = cplex.linearNumExpr();
 			for (int i = 0; i < n; i++) {
