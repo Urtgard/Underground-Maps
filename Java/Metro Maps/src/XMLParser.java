@@ -182,7 +182,7 @@ public class XMLParser {
 		graphics.setColor(Color.WHITE);
 		graphics.fillRect(0, 0, width, height);
 		graphics.setColor(Color.BLACK);
-		graphics.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		graphics.setFont(new Font("Arial", Font.PLAIN, 14));
 
 		int i = 0;
 		for (Station station : stations) {

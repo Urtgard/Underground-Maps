@@ -38,12 +38,12 @@ public class MetroMap {
 	@Override
 	public String toString() {
 		String result = "Stations:";
-		for (Map.Entry station : stations.entrySet()) {
+		for (Map.Entry<String, Station> station : stations.entrySet()) {
 			result += "\n " + station.getKey();
 		}
 
 		result += "\n\nLines:";
-		for (Map.Entry line : lines.entrySet()) {
+		for (Map.Entry<String, Line> line : lines.entrySet()) {
 			result += "\n " + line.getValue();
 		}
 
