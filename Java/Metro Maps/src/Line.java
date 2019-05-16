@@ -1,8 +1,10 @@
+import java.awt.Color;
 import java.util.ArrayList;
 
 public class Line {
 	private String name;
 	private ArrayList<Station> stations = new ArrayList<>();
+	private Color color;
 
 	Line(String n) {
 		name = n;
@@ -69,6 +71,14 @@ public class Line {
 				}
 			}
 		}
+	}
+	
+	public void setColor(Color c) {
+		color = c;
+	}
+	
+	public Color getColor() {
+		return color;
 	}
 
 	@Override

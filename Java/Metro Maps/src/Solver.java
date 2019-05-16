@@ -13,7 +13,7 @@ public class Solver {
 		try {
 			// define new model
 			IloCplex cplex = new IloCplex();
-			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.07);
+			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.1);
 			
 			// variables
 			IloIntVar[] x = cplex.intVarArray(n, 0, Integer.MAX_VALUE);
@@ -35,7 +35,7 @@ public class Solver {
 				//objective.addTerm(y[i], 1);
 				for (int j = 0; j < n; j++) {
 					objective.addTerm(dx[i][j], 1);
-					objective.addTerm(dy[i][j], 1);
+					objective.addTerm(dy[i][j], 2);
 				}
 
 			}
