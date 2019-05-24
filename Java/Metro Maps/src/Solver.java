@@ -114,6 +114,7 @@ public class Solver {
 							1);
 
 					double m = (stationB.getY() - stationA.getY()) / (stationB.getX() - stationA.getX());
+
 					if (m >= 0.414 && m <= 2.414) {
 						if (stationA.getAdjacentStations().size() <= 2 && stationB.getAdjacentStations().size() <= 2) {
 							cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(1, cplex.diff(x[i], x[j])));

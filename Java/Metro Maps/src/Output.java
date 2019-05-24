@@ -85,7 +85,16 @@ public class Output {
 		}
 
 		try {
-			ImageIO.write(bufferedImage, "png", new File("output\\" + name + ".png"));
+			 String OS = System.getProperty("os.name").toLowerCase();
+
+		        if (OS.contains("win")) {
+		        	ImageIO.write(bufferedImage, "png", new File("output\\"+name+".png"));
+		        } else if(OS.contains("mac")) {
+		            System.out.println("This is Mac");
+		        } else if(OS.contains("nix") || OS.contains("nux") || OS.contains("aix")){
+		        	ImageIO.write(bufferedImage, "png", new File("output/"+name+".png"));
+		        }
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
