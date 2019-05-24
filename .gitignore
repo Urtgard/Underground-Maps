@@ -1,6 +1,8 @@
-/java/.metadata/
-/java/.recommenders/
-/java/Metro Maps/.settings
-/java/Metro Maps/.classpath
-/java/Metro Maps/bin/
-/java/Metro Maps/lib/CPLEX_Studio129 
+Java/.metadata/
+Java/.recommenders/
+Java/MetroMaps/.settings
+Java/MetroMaps/.classpath
+Java/MetroMaps/bin/
+Java/MetroMaps/lib/CPLEX_Studio129 
+Java/MetroMaps/.project
+*.png
