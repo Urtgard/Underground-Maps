@@ -6,6 +6,8 @@ import java.util.Map;
 public class MetroMap {
 	private Map<String, Station> stations = new HashMap<String, Station>();
 	private Map<String, Line> lines = new HashMap<String, Line>();
+	private Map<Station, Integer> indexByStation = new HashMap<Station, Integer>();
+	private Map<Integer ,Station> stationByIndex = new HashMap<Integer,Station>();
 	private Color[] colors = new Color[]{
 			new Color(255,51,51),
 			new Color(0,153,0),
@@ -16,11 +18,22 @@ public class MetroMap {
 
 	public void addStation(Station station) {
 		stations.put(station.getName(), station);
+		int n = indexByStation.size();
+		indexByStation.put(station, n);
+		stationByIndex.put(n, station);
 	}
 
 	public Station getStation(String name) {
 		assert stations.get(name) != null : "Station \"" + name + "\" doesn't exists";
 		return stations.get(name);
+	}
+	
+	public Station getStation(int index) {
+		return stationByIndex.get(index);
+	}
+	
+	public int getStationIndex(Station station) {
+		return indexByStation.get(station);
 	}
 
 	public Map<String, Station> getStations() {

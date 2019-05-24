@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Map;
 
 import ilog.concert.*;
@@ -5,7 +6,7 @@ import ilog.cplex.*;
 
 public class Solver {
 	private static int n;
-	private Station[] stations;
+	// private Station[] stations;
 	private IloCplex cplex;
 	private IloIntVar[] x;
 	private IloIntVar[] y;
@@ -17,15 +18,15 @@ public class Solver {
 	public void solve(MetroMap map_) {
 
 		this.map = map_;
-		this.stations = map.getStationsArray();
-		this.n = stations.length;
+		// this.stations = map.getStationsArray();
+		this.n = map.getStations().size();
 		int height = 20;
 		int margin = 30;
 
 		try {
 			// define new model
 			this.cplex = new IloCplex();
-			//cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.01);
+			// cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.01);
 
 			// variables
 			this.x = new IloIntVar[n];// cplex.intVarArray(n, 0,
@@ -34,7 +35,7 @@ public class Solver {
 										// Integer.MAX_VALUE);
 			IloNumVar[][] dx = new IloNumVar[n][n];
 			IloNumVar[][] dy = new IloNumVar[n][n];
-			
+
 			IloNumVar[][] mCost = new IloNumVar[n][n];
 
 			this.a = new IloNumVar[n][n];
@@ -56,12 +57,12 @@ public class Solver {
 
 			IloLinearNumExpr objective = cplex.linearNumExpr();
 			for (int i = 0; i < n; i++) {
-				//objective.addTerm(x[i], 0.1);
-				//objective.addTerm(y[i], 0.1);
+				// objective.addTerm(x[i], 0.1);
+				// objective.addTerm(y[i], 0.1);
 				for (int j = 0; j < n; j++) {
 					objective.addTerm(dx[i][j], 1);
 					objective.addTerm(dy[i][j], 1);
-					
+
 					objective.addTerm(mCost[i][j], 1);
 				}
 
@@ -72,9 +73,9 @@ public class Solver {
 			// constraints
 			Utility u = new Utility();
 			for (int i = 0; i < n; i++) {
-				Station stationA = stations[i];
+				Station stationA = map.getStation(i);
 				for (int j = i + 1; j < n; j++) {
-					Station stationB = stations[j];
+					Station stationB = map.getStation(j);
 					cplex.add(a[i][j]);
 					cplex.add(b[i][j]);
 					cplex.addGe(cplex.sum(cplex.ge(a[i][j], 1), cplex.ge(b[i][j], 1)), 1);
@@ -86,18 +87,8 @@ public class Solver {
 				for (int k = 0; k < line.getStations().size() - 1; k++) {
 					Station stationA = line.getStations().get(k);
 					Station stationB = line.getStations().get(k + 1);
-					int i = -1;
-					int j = -1;
-					for (int a = 0; a < stations.length; a++) {
-						if (stationA == stations[a]) {
-							i = a;
-						} else if (stationB == stations[a]) {
-							j = a;
-						}
-						if (i != -1 && j != -1) {
-							break;
-						}
-					}
+					int i = map.getStationIndex(stationA);
+					int j = map.getStationIndex(stationB);
 
 					if (stationA.getX() >= stationB.getX()) {
 						cplex.addGe(x[i], x[j]);
@@ -124,31 +115,39 @@ public class Solver {
 
 					double m = (stationB.getY() - stationA.getY()) / (stationB.getX() - stationA.getX());
 					if (m >= 0.414 && m <= 2.414) {
-						cplex.addEq(cplex.diff(y[i],y[j]),
-								cplex.prod(1, cplex.diff(x[i],x[j])));
-						//cplex.addGe(cplex.diff(x[j], x[i]),0);
-//						cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(mCost[i][j],cplex.diff(x[i], x[j])));
-//						cplex.addGe(cplex.diff(y[j], y[i]), cplex.prod(0.4, cplex.diff(x[j], x[i])));
-						//cplex.addGe(cplex.diff(cplex.prod(2.4, cplex.diff(x[i], x[j])), cplex.diff(y[i], y[j])),0);
-					/*	if (stationB.getY() - stationA.getY() > 0){
-						cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(1.7, cplex.diff(x[j], x[i])));
-						cplex.addLe(cplex.prod(0.7, cplex.diff(x[j], x[i])), cplex.diff(y[j], y[i]) );
+						if (stationA.getAdjacentStations().size() <= 2 && stationB.getAdjacentStations().size() <= 2) {
+							cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(1, cplex.diff(x[i], x[j])));
 						} else {
-							cplex.addLe(cplex.diff(y[i], y[j]), cplex.prod(1.7, cplex.diff(x[i], x[j])));
-							cplex.addLe(cplex.prod(0.7, cplex.diff(x[i], x[j])), cplex.diff(y[i], y[j]) );
-						}*/
-						
-					} else if (m >= -2.414 && m <= -0.414) {
-						 cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(-1,
-						 cplex.diff(x[i], x[j])));
-
-					/*	 if (stationB.getY() - stationA.getY() > 0){
-							cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(1.7, cplex.diff(x[i], x[j])));
-							cplex.addLe(cplex.prod(0.7, cplex.diff(x[i], x[j])), cplex.diff(y[j], y[i]) );
+							// cplex.addGe(cplex.diff(x[j], x[i]),0);
+							// cplex.addEq(cplex.diff(y[i], y[j]),
+							// cplex.prod(mCost[i][j],cplex.diff(x[i], x[j])));
+							// cplex.addGe(cplex.diff(y[j], y[i]),
+							// cplex.prod(0.4, cplex.diff(x[j], x[i])));
+							// cplex.addGe(cplex.diff(cplex.prod(2.4,
+							// cplex.diff(x[i], x[j])), cplex.diff(y[i],
+							// y[j])),0);
+							if (stationB.getY() - stationA.getY() > 0) {
+								cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(2.4, cplex.diff(x[j], x[i])));
+								cplex.addLe(cplex.prod(0.4, cplex.diff(x[j], x[i])), cplex.diff(y[j], y[i]));
 							} else {
-								cplex.addLe(cplex.diff(y[i], y[j]), cplex.prod(1.7, cplex.diff(x[j], x[i])));
-								cplex.addLe(cplex.prod(0.7, cplex.diff(x[j], x[i])), cplex.diff(y[i], y[j]) );
-							}*/
+								cplex.addLe(cplex.diff(y[i], y[j]), cplex.prod(2.4, cplex.diff(x[i], x[j])));
+								cplex.addLe(cplex.prod(0.4, cplex.diff(x[i], x[j])), cplex.diff(y[i], y[j]));
+							}
+						}
+
+					} else if (m >= -2.414 && m <= -0.414) {
+						if (stationA.getAdjacentStations().size() <= 2 && stationB.getAdjacentStations().size() <= 2) {
+							cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(-1, cplex.diff(x[i], x[j])));
+						} else {
+
+							if (stationB.getY() - stationA.getY() > 0) {
+								cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(2.4, cplex.diff(x[i], x[j])));
+								cplex.addLe(cplex.prod(0.4, cplex.diff(x[i], x[j])), cplex.diff(y[j], y[i]));
+							} else {
+								cplex.addLe(cplex.diff(y[i], y[j]), cplex.prod(2.4, cplex.diff(x[j], x[i])));
+								cplex.addLe(cplex.prod(0.4, cplex.diff(x[j], x[i])), cplex.diff(y[i], y[j]));
+							}
+						}
 
 					} else if (m > 2.414) {
 						cplex.addEq(x[i], x[j]);
@@ -166,6 +165,7 @@ public class Solver {
 
 			// solve model
 			cplex.use(new LazyConstraintCallback());
+			cplex.use(new InfoCallback());
 
 			if (cplex.solve()) {
 				System.out.println("obj = " + cplex.getObjValue());
@@ -182,7 +182,14 @@ public class Solver {
 		}
 	}
 
-	public class LazyConstraintCallback extends IloCplex.LazyConstraintCallback {
+	class InfoCallback extends IloCplex.MIPInfoCallback {
+		public void main() throws IloException {
+			// getBestObjValue()
+			// getIncumbentObjValue()
+		}
+	}
+
+	class LazyConstraintCallback extends IloCplex.LazyConstraintCallback {
 		@Override
 		public void main() throws IloException {
 
@@ -191,16 +198,19 @@ public class Solver {
 			Utility u = new Utility();
 			Output output = new Output();
 			output.createImage(map, getValues(x), getValues(y));
+			boolean overlapping = false;
 			for (int i = 0; i < n; i++) {
-				Station stationA = stations[i];
-				for (int j = i + 1; j < n; j++) {
-					Station stationB = stations[j];
+				Station stationA = map.getStation(i);
 
+				for (int j = i + 1; j < n; j++) {
+					Station stationB = map.getStation(j);
+
+					// overlapping labels
 					if (!((getValue(x[i]) >= (getValue(x[j]) + u.getStringWidth(stationB.getName()) + margin))
 							|| (getValue(x[j]) >= (getValue(x[i]) + u.getStringWidth(stationA.getName()) + margin))
 							|| (getValue(y[i]) >= (getValue(y[j]) + margin))
 							|| (getValue(y[j]) >= (getValue(y[i]) + margin)))) {
-
+						overlapping = true;
 						System.out.println(
 								stationA.getName() + " & " + stationB.getName() + " overlapping. Adding constraint");
 
@@ -233,12 +243,31 @@ public class Solver {
 								this.add(cplex.ge(
 										cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + margin)), 0));
 							}
-							
+
 						}
 					}
-					
 
 				}
+				//if (overlapping == true) {					return;				}
+				/*for (Map.Entry<String, Line> l : map.getLines().entrySet()) {
+					Line line = l.getValue();
+					ArrayList<Station> lStations = line.getStations();
+					for (int k = 0; k < lStations.size() - 1; k++) {
+						Station sA = lStations.get(k);
+						Station sB = lStations.get(k + 1);
+						if (sA != stationA && sB != stationA) {
+							int iA = map.getStationIndex(stationA);
+							int isA= map.getStationIndex(sA);
+							int isB= map.getStationIndex(sB);
+							if ((getValue(y[iA]) < getValue(y[isA]) && getValue(y[iA]) > getValue(y[isB]))
+									|| (getValue(y[iA]) > getValue(y[isA]) && getValue(y[iA]) < getValue(y[isB]))) {
+								if(getValue(x[iA]) < Math.min(getValue(x[isA]), getValue(x[isB])) && (getValue(x[iA])+u.getStringWidth(stationA.getName())+margin) > Math.min(getValue(x[isA]), getValue(x[isB]))){
+									System.out.println(stationA+ " cutting "+ sA+" & "+sB);
+								}
+							}
+						}
+					}
+				}*/
 			}
 
 		}
