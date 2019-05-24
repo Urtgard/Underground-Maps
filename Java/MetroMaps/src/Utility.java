@@ -10,8 +10,8 @@ public class Utility {
 		Graphics2D g = i2.createGraphics();
 		g.setFont(new Font("Arial", Font.PLAIN, 14));
 		FontMetrics fm = g.getFontMetrics();
-		Rectangle2D bounds = fm.getStringBounds(str, g);
-		//return (int) bounds.getWidth();
+		// Rectangle2D bounds = fm.getStringBounds(str, g);
+		// return (int) bounds.getWidth();
 		return fm.stringWidth(str);
 	}
 }

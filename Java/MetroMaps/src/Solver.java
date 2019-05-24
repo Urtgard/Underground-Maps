@@ -1,11 +1,10 @@
-import java.util.ArrayList;
 import java.util.Map;
 
 import ilog.concert.*;
 import ilog.cplex.*;
 
 public class Solver {
-	private static int n;
+	private int n;
 	// private Station[] stations;
 	private IloCplex cplex;
 	private IloIntVar[] x;
@@ -140,7 +139,6 @@ public class Solver {
 						if (stationA.getAdjacentStations().size() <= 2 && stationB.getAdjacentStations().size() <= 2) {
 							cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(-1, cplex.diff(x[i], x[j])));
 						} else {
-
 							if (stationB.getY() - stationA.getY() > 0) {
 								cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(2.4, cplex.diff(x[i], x[j])));
 								cplex.addLe(cplex.prod(0.4, cplex.diff(x[i], x[j])), cplex.diff(y[j], y[i]));
@@ -218,10 +216,8 @@ public class Solver {
 						if (stationA.getX() <= stationB.getX()) {
 
 							this.add(cplex.ge(cplex.diff(cplex.diff(x[j], x[i]),
-									cplex.prod(a[i][j], u.getStringWidth(stationA.getName()) + margin)), 0
-
-							));
-
+									cplex.prod(a[i][j], u.getStringWidth(stationA.getName()) + margin)), 0));
+							
 							if (stationA.getY() <= stationB.getY()) {
 								this.add(cplex.ge(
 										cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + margin)), 0));
@@ -231,12 +227,9 @@ public class Solver {
 							}
 
 						} else {
-
 							this.add(cplex.ge(cplex.diff(cplex.diff(x[i], x[j]),
-									cplex.prod(a[i][j], u.getStringWidth(stationB.getName()) + margin)), 0
-
-							));
-
+									cplex.prod(a[i][j], u.getStringWidth(stationB.getName()) + margin)), 0));
+							
 							if (stationA.getY() >= stationB.getY()) {
 								this.add(cplex.ge(
 										cplex.diff(cplex.diff(y[i], y[j]), cplex.prod(b[i][j], height + margin)), 0));
@@ -249,26 +242,6 @@ public class Solver {
 					}
 
 				}
-				//if (overlapping == true) {					return;				}
-				/*for (Map.Entry<String, Line> l : map.getLines().entrySet()) {
-					Line line = l.getValue();
-					ArrayList<Station> lStations = line.getStations();
-					for (int k = 0; k < lStations.size() - 1; k++) {
-						Station sA = lStations.get(k);
-						Station sB = lStations.get(k + 1);
-						if (sA != stationA && sB != stationA) {
-							int iA = map.getStationIndex(stationA);
-							int isA= map.getStationIndex(sA);
-							int isB= map.getStationIndex(sB);
-							if ((getValue(y[iA]) < getValue(y[isA]) && getValue(y[iA]) > getValue(y[isB]))
-									|| (getValue(y[iA]) > getValue(y[isA]) && getValue(y[iA]) < getValue(y[isB]))) {
-								if(getValue(x[iA]) < Math.min(getValue(x[isA]), getValue(x[isB])) && (getValue(x[iA])+u.getStringWidth(stationA.getName())+margin) > Math.min(getValue(x[isA]), getValue(x[isB]))){
-									System.out.println(stationA+ " cutting "+ sA+" & "+sB);
-								}
-							}
-						}
-					}
-				}*/
 			}
 
 		}
