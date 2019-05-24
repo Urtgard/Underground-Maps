@@ -13,7 +13,7 @@ public class Solver {
 		try {
 			// define new model
 			IloCplex cplex = new IloCplex();
-			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.1);
+			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.04);
 			
 			// variables
 			IloIntVar[] x = cplex.intVarArray(n, 0, Integer.MAX_VALUE);
@@ -48,13 +48,7 @@ public class Solver {
 				Station stationA = stations[i];
 				for (int j = i + 1; j < n; j++) {
 					Station stationB = stations[j];
-					cplex.addGe(
-							cplex.sum(cplex.ge(x[i], cplex.sum(x[j], u.getStringWidth(stationB.getName()) + margin)),
-									cplex.ge(x[j], cplex.sum(x[i], u.getStringWidth(stationA.getName()) + margin)),
-									cplex.ge(y[i], cplex.sum(y[j], height + margin)),
-									cplex.ge(y[j], cplex.sum(y[i], height + margin))
-									),
-							1);
+					
 					
 				}
 			}
@@ -91,6 +85,14 @@ public class Solver {
 						cplex.addLe(y[i], y[j]);
 						cplex.addLe(cplex.diff(y[j], y[i]), dy[i][j]);
 					}
+					
+					cplex.addGe(
+							cplex.sum(cplex.ge(x[i], cplex.sum(x[j], u.getStringWidth(stationB.getName()) + margin)),
+									cplex.ge(x[j], cplex.sum(x[i], u.getStringWidth(stationA.getName()) + margin)),
+									cplex.ge(y[i], cplex.sum(y[j], height + margin)),
+									cplex.ge(y[j], cplex.sum(y[i], height + margin))
+									),
+							1);
 												
 					double m  = (stationA.getY() - stationB.getY())/(stationA.getX() - stationB.getX());		
 					if (m >= 0.414 && m <= 2.414) {
