@@ -10,6 +10,8 @@ import java.util.Date;
 import javax.imageio.ImageIO;
 
 public class Output {
+	boolean bigline = false;
+	
 	public void createImage(MetroMap map, double[] x, double[] y) {
 		DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy-HH-mm-ss");
 		Date date = new Date();
@@ -54,30 +56,36 @@ public class Output {
 			}
 			graphics.setColor(Color.BLACK);
 			graphics.drawString(station.getName(), (int) Math.round(x[i]), height - (int) Math.round(y[i]));
-			
+
 			// draw line
-			for(Station s : station.getAdjacentStations()){
-				int j = map.getStationIndex(s);
-				if (lineDrawn[i][j] == false) {
-					if (station.getY() != s.getY()) {
-						if (station.getY() > s.getY()){
-							int xpoints[] = {(int) x[i], (int)x[i]+u.getStringWidth(station.getName()), (int)x[j]+u.getStringWidth(s.getName()),(int) x[j]};
-						    int ypoints[] = {height - (int) y[i] + 2,height - (int)y[i] + 2,height - (int) y[j]-12,height - (int)y[j]-12};
-						    int npoints = 4;
-						    graphics.setColor(new Color(0, 0, 0, 128));
-						    graphics.fillPolygon(xpoints, ypoints, npoints);
-						    lineDrawn[i][j] = true;
-						    lineDrawn[j][i] = true;
-						}
-					} else {
-						if (station.getX() < s.getX()){
-							int xpoints[] = {(int)x[i]+u.getStringWidth(station.getName()), (int)x[i]+u.getStringWidth(station.getName()), (int)x[j],(int) x[j]};
-						    int ypoints[] = {height - (int) y[i] +2 ,height - (int)y[i] - 12,height - (int) y[j]-12,height - (int)y[j] + 2};
-						    int npoints = 4;
-						    graphics.setColor(new Color(0, 0, 0, 128));
-						    graphics.fillPolygon(xpoints, ypoints, npoints);
-						    lineDrawn[i][j] = true;
-						    lineDrawn[j][i] = true;
+			if (bigline == true) {
+				for (Station s : station.getAdjacentStations()) {
+					int j = map.getStationIndex(s);
+					if (lineDrawn[i][j] == false) {
+						if (station.getY() != s.getY()) {
+							if (station.getY() > s.getY()) {
+								int xpoints[] = { (int) x[i], (int) x[i] + u.getStringWidth(station.getName()),
+										(int) x[j] + u.getStringWidth(s.getName()), (int) x[j] };
+								int ypoints[] = { height - (int) y[i] + 2, height - (int) y[i] + 2,
+										height - (int) y[j] - 12, height - (int) y[j] - 12 };
+								int npoints = 4;
+								graphics.setColor(new Color(0, 0, 0, 128));
+								graphics.fillPolygon(xpoints, ypoints, npoints);
+								lineDrawn[i][j] = true;
+								lineDrawn[j][i] = true;
+							}
+						} else {
+							if (station.getX() < s.getX()) {
+								int xpoints[] = { (int) x[i] + u.getStringWidth(station.getName()),
+										(int) x[i] + u.getStringWidth(station.getName()), (int) x[j], (int) x[j] };
+								int ypoints[] = { height - (int) y[i] + 2, height - (int) y[i] - 12,
+										height - (int) y[j] - 12, height - (int) y[j] + 2 };
+								int npoints = 4;
+								graphics.setColor(new Color(0, 0, 0, 128));
+								graphics.fillPolygon(xpoints, ypoints, npoints);
+								lineDrawn[i][j] = true;
+								lineDrawn[j][i] = true;
+							}
 						}
 					}
 				}
@@ -85,16 +93,14 @@ public class Output {
 		}
 
 		try {
-			 String OS = System.getProperty("os.name").toLowerCase();
-
-		        if (OS.contains("win")) {
-		        	ImageIO.write(bufferedImage, "png", new File("output\\"+name+".png"));
-		        } else if(OS.contains("mac")) {
-		            System.out.println("This is Mac");
-		        } else if(OS.contains("nix") || OS.contains("nux") || OS.contains("aix")){
-		        	ImageIO.write(bufferedImage, "png", new File("output/"+name+".png"));
-		        }
-			
+			String OS = System.getProperty("os.name").toLowerCase();
+			if (OS.contains("win")) {
+				ImageIO.write(bufferedImage, "png", new File("output\\" + name + ".png"));
+			} else if (OS.contains("mac")) {
+				System.out.println("This is Mac");
+			} else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
+				ImageIO.write(bufferedImage, "png", new File("output/" + name + ".png"));
+			}
 		} catch (Exception e) {
 			System.out.println(e);
 		}

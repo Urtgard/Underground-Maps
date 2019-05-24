@@ -34,7 +34,8 @@ public class Solver {
 										// Integer.MAX_VALUE);
 			IloNumVar[][] dx = new IloNumVar[n][n];
 			IloNumVar[][] dy = new IloNumVar[n][n];
-
+			IloNumVar[][] d = new IloNumVar[n][n];
+			IloIntVar[][] biggap = new IloIntVar[n][n];
 			IloNumVar[][] mCost = new IloNumVar[n][n];
 
 			this.a = new IloNumVar[n][n];
@@ -45,9 +46,11 @@ public class Solver {
 				y[i] = cplex.intVar(0, Integer.MAX_VALUE);
 				dx[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
 				dy[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
+				d[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
 				a[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
 				b[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
 				mCost[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
+				biggap[i] = cplex.boolVarArray(n);
 			}
 
 			// expressions
@@ -55,21 +58,25 @@ public class Solver {
 			// objective, das ist ein test
 
 			IloLinearNumExpr objective = cplex.linearNumExpr();
+			IloLQNumExpr distance = cplex.lqNumExpr();
 			for (int i = 0; i < n; i++) {
 				// objective.addTerm(x[i], 0.1);
 				// objective.addTerm(y[i], 0.1);
 				for (int j = 0; j < n; j++) {
-					objective.addTerm(dx[i][j], 1);
-					objective.addTerm(dy[i][j], 1);
-
+					//objective.addTerm(dx[i][j], 1);
+					//objective.addTerm(dy[i][j], 1);
 					objective.addTerm(mCost[i][j], 1);
+					distance.addTerm(1, dx[i][j], dx[i][j]);
+					distance.addTerm(1, dy[i][j], dy[i][j]);
 				}
 
 			}
 
-			cplex.addMinimize(objective);
+			cplex.addMinimize(cplex.sum(objective,distance));
+			//cplex.addMinimize(distance);
 
 			// constraints
+			boolean initialConstraints[][] = new boolean[n][n];
 			Utility u = new Utility();
 			for (int i = 0; i < n; i++) {
 				Station stationA = map.getStation(i);
@@ -79,85 +86,76 @@ public class Solver {
 					cplex.add(b[i][j]);
 					cplex.addGe(cplex.sum(cplex.ge(a[i][j], 1), cplex.ge(b[i][j], 1)), 1);
 				}
-			}
 
-			for (Map.Entry<String, Line> l : map.getLines().entrySet()) {
-				Line line = l.getValue();
-				for (int k = 0; k < line.getStations().size() - 1; k++) {
-					Station stationA = line.getStations().get(k);
-					Station stationB = line.getStations().get(k + 1);
-					int i = map.getStationIndex(stationA);
+				for (Station stationB : stationA.getAdjacentStations()) {
 					int j = map.getStationIndex(stationB);
+					if (initialConstraints[i][j] != true || initialConstraints[j][i] != true) {
+						initialConstraints[i][j] = true;
+						initialConstraints[j][i] = true;
 
-					if (stationA.getX() >= stationB.getX()) {
-						cplex.addGe(x[i], x[j]);
-						cplex.addLe(cplex.diff(x[i], x[j]), dx[i][j]);
-					} else {
-						cplex.addLe(x[i], x[j]);
-						cplex.addLe(cplex.diff(x[j], x[i]), dx[i][j]);
-					}
-
-					if (stationA.getY() >= stationB.getY()) {
-						cplex.addGe(y[i], y[j]);
-						cplex.addLe(cplex.diff(y[i], y[j]), dy[i][j]);
-					} else {
-						cplex.addLe(y[i], y[j]);
-						cplex.addLe(cplex.diff(y[j], y[i]), dy[i][j]);
-					}
-
-					cplex.addGe(
-							cplex.sum(cplex.ge(x[i], cplex.sum(x[j], u.getStringWidth(stationB.getName()) + margin)),
-									cplex.ge(x[j], cplex.sum(x[i], u.getStringWidth(stationA.getName()) + margin)),
-									cplex.ge(y[i], cplex.sum(y[j], height + margin)),
-									cplex.ge(y[j], cplex.sum(y[i], height + margin))),
-							1);
-
-					double m = (stationB.getY() - stationA.getY()) / (stationB.getX() - stationA.getX());
-
-					if (m >= 0.414 && m <= 2.414) {
-						if (stationA.getAdjacentStations().size() <= 2 && stationB.getAdjacentStations().size() <= 2) {
-							cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(1, cplex.diff(x[i], x[j])));
+						if (stationA.getX() >= stationB.getX()) {
+							cplex.addGe(x[i], x[j]);
+							cplex.addLe(cplex.diff(x[i], x[j]), dx[i][j]);
 						} else {
-							// cplex.addGe(cplex.diff(x[j], x[i]),0);
-							// cplex.addEq(cplex.diff(y[i], y[j]),
-							// cplex.prod(mCost[i][j],cplex.diff(x[i], x[j])));
-							// cplex.addGe(cplex.diff(y[j], y[i]),
-							// cplex.prod(0.4, cplex.diff(x[j], x[i])));
-							// cplex.addGe(cplex.diff(cplex.prod(2.4,
-							// cplex.diff(x[i], x[j])), cplex.diff(y[i],
-							// y[j])),0);
-							if (stationB.getY() - stationA.getY() > 0) {
-								cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(2.4, cplex.diff(x[j], x[i])));
-								cplex.addLe(cplex.prod(0.4, cplex.diff(x[j], x[i])), cplex.diff(y[j], y[i]));
-							} else {
-								cplex.addLe(cplex.diff(y[i], y[j]), cplex.prod(2.4, cplex.diff(x[i], x[j])));
-								cplex.addLe(cplex.prod(0.4, cplex.diff(x[i], x[j])), cplex.diff(y[i], y[j]));
-							}
+							cplex.addLe(x[i], x[j]);
+							cplex.addLe(cplex.diff(x[j], x[i]), dx[i][j]);
 						}
 
-					} else if (m >= -2.414 && m <= -0.414) {
-						if (stationA.getAdjacentStations().size() <= 2 && stationB.getAdjacentStations().size() <= 2) {
-							cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(-1, cplex.diff(x[i], x[j])));
+						if (stationA.getY() >= stationB.getY()) {
+							cplex.addGe(y[i], y[j]);
+							cplex.addLe(cplex.diff(y[i], y[j]), dy[i][j]);
 						} else {
-							if (stationB.getY() - stationA.getY() > 0) {
-								cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(2.4, cplex.diff(x[i], x[j])));
-								cplex.addLe(cplex.prod(0.4, cplex.diff(x[i], x[j])), cplex.diff(y[j], y[i]));
-							} else {
-								cplex.addLe(cplex.diff(y[i], y[j]), cplex.prod(2.4, cplex.diff(x[j], x[i])));
-								cplex.addLe(cplex.prod(0.4, cplex.diff(x[j], x[i])), cplex.diff(y[i], y[j]));
-							}
+							cplex.addLe(y[i], y[j]);
+							cplex.addLe(cplex.diff(y[j], y[i]), dy[i][j]);
 						}
+						
+						cplex.addGe(cplex.sum(
+								cplex.ge(x[i], cplex.sum(x[j], u.getStringWidth(stationB.getName()) + margin)),
+								cplex.ge(x[j], cplex.sum(x[i], u.getStringWidth(stationA.getName()) + margin)),
+								cplex.ge(y[i], cplex.sum(y[j], height + margin)),
+								cplex.ge(y[j], cplex.sum(y[i], height + margin))), 1);
 
-					} else if (m > 2.414) {
-						cplex.addEq(x[i], x[j]);
-						// cplex.addGe( cplex.diff(y[i],y[j]), cplex.prod(10,
-						// cplex.diff(x[i],x[j])));
-					} else if (m < -2.414) {
-						cplex.addEq(x[i], x[j]);
-						// cplex.addLe( cplex.diff(y[i],y[j]), cplex.prod(-10,
-						// cplex.diff(x[i],x[j])));
-					} else {
-						cplex.addEq(y[i], y[j]);
+						double m = (stationB.getY() - stationA.getY()) / (stationB.getX() - stationA.getX());
+						double mMax = 2.0;
+						double mMin = 0.5;
+
+						if (m >= 0.414 && m <= 2.414) {
+							if (stationA.getAdjacentStations().size() <= 2
+									&& stationB.getAdjacentStations().size() <= 2) {
+								cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(1, cplex.diff(x[i], x[j])));
+							} else {
+								if (stationB.getY() - stationA.getY() > 0) {
+									cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(mMax, cplex.diff(x[j], x[i])));
+									cplex.addLe(cplex.prod(mMin, cplex.diff(x[j], x[i])), cplex.diff(y[j], y[i]));
+								} else {
+									cplex.addLe(cplex.diff(y[i], y[j]), cplex.prod(mMax, cplex.diff(x[i], x[j])));
+									cplex.addLe(cplex.prod(mMin, cplex.diff(x[i], x[j])), cplex.diff(y[i], y[j]));
+								}
+							}
+						} else if (m >= -2.414 && m <= -0.414) {
+							if (stationA.getAdjacentStations().size() <= 2
+									&& stationB.getAdjacentStations().size() <= 2) {
+								cplex.addEq(cplex.diff(y[i], y[j]), cplex.prod(-1, cplex.diff(x[i], x[j])));
+							} else {
+								if (stationB.getY() - stationA.getY() > 0) {
+									cplex.addLe(cplex.diff(y[j], y[i]), cplex.prod(mMax, cplex.diff(x[i], x[j])));
+									cplex.addLe(cplex.prod(mMin, cplex.diff(x[i], x[j])), cplex.diff(y[j], y[i]));
+								} else {
+									cplex.addLe(cplex.diff(y[i], y[j]), cplex.prod(mMax, cplex.diff(x[j], x[i])));
+									cplex.addLe(cplex.prod(mMin, cplex.diff(x[j], x[i])), cplex.diff(y[i], y[j]));
+								}
+							}
+						} else if (m > 2.414) {
+							cplex.addEq(x[i], x[j]);
+							// cplex.addGe(cplex.diff(y[i], y[j]),
+							// cplex.prod(10, cplex.diff(x[i], x[j])));
+						} else if (m < -2.414) {
+							cplex.addEq(x[i], x[j]);
+							// cplex.addLe(cplex.diff(y[i], y[j]),
+							// cplex.prod(-10, cplex.diff(x[i], x[j])));
+						} else {
+							cplex.addEq(y[i], y[j]);
+						}
 					}
 				}
 			}
@@ -214,10 +212,9 @@ public class Solver {
 								stationA.getName() + " & " + stationB.getName() + " overlapping. Adding constraint");
 
 						if (stationA.getX() <= stationB.getX()) {
-
 							this.add(cplex.ge(cplex.diff(cplex.diff(x[j], x[i]),
 									cplex.prod(a[i][j], u.getStringWidth(stationA.getName()) + margin)), 0));
-							
+
 							if (stationA.getY() <= stationB.getY()) {
 								this.add(cplex.ge(
 										cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + margin)), 0));
@@ -229,7 +226,7 @@ public class Solver {
 						} else {
 							this.add(cplex.ge(cplex.diff(cplex.diff(x[i], x[j]),
 									cplex.prod(a[i][j], u.getStringWidth(stationB.getName()) + margin)), 0));
-							
+
 							if (stationA.getY() >= stationB.getY()) {
 								this.add(cplex.ge(
 										cplex.diff(cplex.diff(y[i], y[j]), cplex.prod(b[i][j], height + margin)), 0));
@@ -237,11 +234,35 @@ public class Solver {
 								this.add(cplex.ge(
 										cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + margin)), 0));
 							}
-
 						}
 					}
-
 				}
+
+				/*for (Station stationB : stationA.getAdjacentStations()) {
+					int j = map.getStationIndex(stationB);
+					if (Math.pow(getValue(x[i]) - getValue(x[j]), 2)
+							+ Math.pow(getValue(y[i]) - getValue(y[j]), 2) > 5000) {
+						//this.add(cplex.ge(cplex.square(x[i]),1));
+						//System.out.println(stationA + " " + stationB);
+					}
+					
+					if (stationA.getX() >= stationB.getX()) {
+
+						cplex.addGe(x[i], x[j]);
+						cplex.addLe(cplex.square(cplex.diff(x[i], x[j])), dx[i][j]);
+					} else {
+						cplex.addLe(x[i], x[j]);
+						cplex.addLe(cplex.square(cplex.diff(x[j], x[i])), dx[i][j]);
+					}
+
+					if (stationA.getY() >= stationB.getY()) {
+						cplex.addGe(y[i], y[j]);
+						cplex.addLe(cplex.square(cplex.diff(y[i], y[j])), dy[i][j]);
+					} else {
+						cplex.addLe(y[i], y[j]);
+						cplex.addLe(cplex.square(cplex.diff(y[j], y[i])), dy[i][j]);
+					}
+				}*/
 			}
 
 		}
