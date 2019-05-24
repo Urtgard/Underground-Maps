@@ -12,6 +12,16 @@ public class MetroMap {
 			new Color(51,153,255),
 			new Color(255,102,0),
 			new Color(153,0,255),
+			new Color(255,51,51),
+			new Color(0,153,0),
+			new Color(51,153,255),
+			new Color(255,102,0),
+			new Color(153,0,255),
+			new Color(255,51,51),
+			new Color(0,153,0),
+			new Color(51,153,255),
+			new Color(255,102,0),
+			new Color(153,0,255),
 	};
 
 	public void addStation(Station station) {
