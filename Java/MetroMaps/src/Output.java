@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 
 public class Output {
 	boolean bigline = false;
-	
+
 	public void createImage(MetroMap map, double[] x, double[] y) {
 		DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy-HH-mm-ss");
 		Date date = new Date();
@@ -93,18 +93,77 @@ public class Output {
 		}
 
 		try {
+
 			String OS = System.getProperty("os.name").toLowerCase();
+			Core C = new Core();
+			String graphName = C.graphName;
+
 			if (OS.contains("win")) {
-				ImageIO.write(bufferedImage, "png", new File("output\\" + name + ".png"));
+
+				ImageIO.write(bufferedImage, "png",
+						new File("output\\" + graphName + "_" + name + "\\" + name + ".png"));
+
 			} else if (OS.contains("mac")) {
-				System.out.println("This is Mac");
+				File theDirOut = new File("output");
+				if (!theDirOut.exists()) {
+					try {
+						theDirOut.mkdir();
+						File theDir = new File("output/" + graphName);
+						if (!theDir.exists()) {
+							theDir.mkdirs();
+						}
+						ImageIO.write(bufferedImage, "png",
+								new File("output/" + graphName +"/" + name + ".png"));
+					} catch (SecurityException se) {
+						System.out.println("Problem mit der Output Folder Erstellung bei Mac");
+					}
+				} else {
+					try {
+						File theDir = new File("output/" + graphName);
+						if (!theDir.exists()) {
+							theDir.mkdirs();
+						}
+						ImageIO.write(bufferedImage, "png",
+								new File("output/" + graphName + "/" + name + ".png"));
+					} catch (SecurityException se) {
+						System.out.println("Problem mit der Output Folder Erstellung bei Mac");
+					}
+				}
+
 			} else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
-				ImageIO.write(bufferedImage, "png", new File("output/" + name + ".png"));
+				File theDirOut = new File("output");
+				if (!theDirOut.exists()) {
+					try {
+						theDirOut.mkdir();
+						File theDir = new File("output/" + graphName);
+						if (!theDir.exists()) {
+							theDir.mkdirs();
+						}
+						ImageIO.write(bufferedImage, "png",
+								new File("output/" + graphName +"/" + name + ".png"));
+					} catch (SecurityException se) {
+						System.out.println("Problem mit der Output Folder Erstellung bei Linux");
+					}
+				} else {
+					try {
+						File theDir = new File("output/" + graphName);
+						if (!theDir.exists()) {
+							theDir.mkdirs();
+						}
+						ImageIO.write(bufferedImage, "png",
+								new File("output/" + graphName + "/" + name + ".png"));
+					} catch (SecurityException se) {
+						System.out.println("Problem mit der Output Folder Erstellung bei Linux");
+					}
+				}
 			}
-		} catch (Exception e) {
+
+		} catch (
+
+		Exception e) {
 			System.out.println(e);
 		}
 
-		System.out.println("Image Created");
+		System.out.println("Image Created in Directory " + System.getProperty("user.dir"));
 	}
 }

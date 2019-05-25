@@ -25,7 +25,7 @@ public class Solver {
 		try {
 			// define new model
 			this.cplex = new IloCplex();
-			// cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.01);
+			 //cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.1);
 
 			// variables
 			this.x = new IloIntVar[n];// cplex.intVarArray(n, 0,
