@@ -35,7 +35,6 @@ public class Solver {
 			IloNumVar[][] dx = new IloNumVar[n][n];
 			IloNumVar[][] dy = new IloNumVar[n][n];
 			IloNumVar[][] d = new IloNumVar[n][n];
-			IloIntVar[][] biggap = new IloIntVar[n][n];
 			IloNumVar[][] mCost = new IloNumVar[n][n];
 
 			this.a = new IloNumVar[n][n];
@@ -50,7 +49,6 @@ public class Solver {
 				a[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
 				b[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
 				mCost[i] = cplex.numVarArray(n, 0, Integer.MAX_VALUE);
-				biggap[i] = cplex.boolVarArray(n);
 			}
 
 			// expressions
@@ -63,8 +61,8 @@ public class Solver {
 				// objective.addTerm(x[i], 0.1);
 				// objective.addTerm(y[i], 0.1);
 				for (int j = 0; j < n; j++) {
-					//objective.addTerm(dx[i][j], 1);
-					//objective.addTerm(dy[i][j], 1);
+					// objective.addTerm(dx[i][j], 1);
+					// objective.addTerm(dy[i][j], 1);
 					objective.addTerm(mCost[i][j], 1);
 					distance.addTerm(1, dx[i][j], dx[i][j]);
 					distance.addTerm(1, dy[i][j], dy[i][j]);
@@ -72,8 +70,8 @@ public class Solver {
 
 			}
 
-			cplex.addMinimize(cplex.sum(objective,distance));
-			//cplex.addMinimize(distance);
+			cplex.addMinimize(cplex.sum(objective, distance));
+			// cplex.addMinimize(distance);
 
 			// constraints
 			boolean initialConstraints[][] = new boolean[n][n];
@@ -108,7 +106,7 @@ public class Solver {
 							cplex.addLe(y[i], y[j]);
 							cplex.addLe(cplex.diff(y[j], y[i]), dy[i][j]);
 						}
-						
+
 						cplex.addGe(cplex.sum(
 								cplex.ge(x[i], cplex.sum(x[j], u.getStringWidth(stationB.getName()) + margin)),
 								cplex.ge(x[j], cplex.sum(x[i], u.getStringWidth(stationA.getName()) + margin)),
@@ -237,32 +235,6 @@ public class Solver {
 						}
 					}
 				}
-
-				/*for (Station stationB : stationA.getAdjacentStations()) {
-					int j = map.getStationIndex(stationB);
-					if (Math.pow(getValue(x[i]) - getValue(x[j]), 2)
-							+ Math.pow(getValue(y[i]) - getValue(y[j]), 2) > 5000) {
-						//this.add(cplex.ge(cplex.square(x[i]),1));
-						//System.out.println(stationA + " " + stationB);
-					}
-					
-					if (stationA.getX() >= stationB.getX()) {
-
-						cplex.addGe(x[i], x[j]);
-						cplex.addLe(cplex.square(cplex.diff(x[i], x[j])), dx[i][j]);
-					} else {
-						cplex.addLe(x[i], x[j]);
-						cplex.addLe(cplex.square(cplex.diff(x[j], x[i])), dx[i][j]);
-					}
-
-					if (stationA.getY() >= stationB.getY()) {
-						cplex.addGe(y[i], y[j]);
-						cplex.addLe(cplex.square(cplex.diff(y[i], y[j])), dy[i][j]);
-					} else {
-						cplex.addLe(y[i], y[j]);
-						cplex.addLe(cplex.square(cplex.diff(y[j], y[i])), dy[i][j]);
-					}
-				}*/
 			}
 
 		}
