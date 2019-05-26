@@ -101,7 +101,7 @@ public class Output {
 			if (OS.contains("win")) {
 
 				ImageIO.write(bufferedImage, "png",
-						new File("output\\" + graphName + "_" + name + "\\" + name + ".png"));
+						new File("output\\" + graphName +"\\" + name + ".png"));
 
 			} else if (OS.contains("mac")) {
 				File theDirOut = new File("output");
