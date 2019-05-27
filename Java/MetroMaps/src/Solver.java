@@ -14,18 +14,30 @@ public class Solver {
 	IloNumVar[][] a;
 	IloNumVar[][] b;
 
-	public void solve(MetroMap map_) {
+	int marginX = 20;
+	int marginY = 20;
+	int height = 14;
 
+	public void solve(MetroMap map_) {
 		this.map = map_;
-		// this.stations = map.getStationsArray();
 		this.n = map.getStations().size();
-		int height = 20;
-		int margin = 30;
+
+		// populate nearest stations list
+		for (int i = 0; i < n; i++) {
+			Station stationA = map.getStation(i);
+			for (int j = i + 1; j < n; j++) {
+				Station stationB = map.getStation(j);
+				double distance = Math.sqrt(Math.pow(stationB.getX() - stationA.getX(), 2)
+						+ Math.pow(stationB.getY() - stationA.getY(), 2));
+				stationA.addNearestStation(stationB, distance);
+				stationB.addNearestStation(stationA, distance);
+			}
+		}
 
 		try {
 			// define new model
 			this.cplex = new IloCplex();
-			 //cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.1);
+			// cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.1);
 
 			// variables
 			this.x = new IloIntVar[n];// cplex.intVarArray(n, 0,
@@ -63,8 +75,8 @@ public class Solver {
 				// objective.addTerm(x[i], 0.1);
 				// objective.addTerm(y[i], 0.1);
 				for (int j = 0; j < n; j++) {
-					//objective.addTerm(dx[i][j], 1);
-					//objective.addTerm(dy[i][j], 1);
+					// objective.addTerm(dx[i][j], 1);
+					// objective.addTerm(dy[i][j], 1);
 					objective.addTerm(mCost[i][j], 1);
 					distance.addTerm(1, dx[i][j], dx[i][j]);
 					distance.addTerm(1, dy[i][j], dy[i][j]);
@@ -72,8 +84,8 @@ public class Solver {
 
 			}
 
-			cplex.addMinimize(cplex.sum(objective,distance));
-			//cplex.addMinimize(distance);
+			cplex.addMinimize(cplex.sum(objective, distance));
+			// cplex.addMinimize(distance);
 
 			// constraints
 			boolean initialConstraints[][] = new boolean[n][n];
@@ -83,8 +95,12 @@ public class Solver {
 				for (int j = i + 1; j < n; j++) {
 					Station stationB = map.getStation(j);
 					cplex.add(a[i][j]);
+					cplex.add(a[j][i]);
 					cplex.add(b[i][j]);
+					cplex.add(b[j][i]);
+
 					cplex.addGe(cplex.sum(cplex.ge(a[i][j], 1), cplex.ge(b[i][j], 1)), 1);
+					cplex.addGe(cplex.sum(cplex.ge(a[j][i], 1), cplex.ge(b[j][i], 1)), 1);
 				}
 
 				for (Station stationB : stationA.getAdjacentStations()) {
@@ -108,12 +124,12 @@ public class Solver {
 							cplex.addLe(y[i], y[j]);
 							cplex.addLe(cplex.diff(y[j], y[i]), dy[i][j]);
 						}
-						
+
 						cplex.addGe(cplex.sum(
-								cplex.ge(x[i], cplex.sum(x[j], u.getStringWidth(stationB.getName()) + margin)),
-								cplex.ge(x[j], cplex.sum(x[i], u.getStringWidth(stationA.getName()) + margin)),
-								cplex.ge(y[i], cplex.sum(y[j], height + margin)),
-								cplex.ge(y[j], cplex.sum(y[i], height + margin))), 1);
+								cplex.ge(x[i], cplex.sum(x[j], u.getStringWidth(stationB.getName()) + marginX)),
+								cplex.ge(x[j], cplex.sum(x[i], u.getStringWidth(stationA.getName()) + marginX)),
+								cplex.ge(y[i], cplex.sum(y[j], height + marginY)),
+								cplex.ge(y[j], cplex.sum(y[i], height + marginY))), 1);
 
 						double m = (stationB.getY() - stationA.getY()) / (stationB.getX() - stationA.getX());
 						double mMax = 2.0;
@@ -190,79 +206,134 @@ public class Solver {
 		@Override
 		public void main() throws IloException {
 
-			int height = 20;
-			int margin = 30;
 			Utility u = new Utility();
 			Output output = new Output();
 			output.createImage(map, getValues(x), getValues(y));
+
 			boolean overlapping = false;
+			boolean cuts[][][] = new boolean[n][n][n];
 			for (int i = 0; i < n; i++) {
 				Station stationA = map.getStation(i);
 
-				for (int j = i + 1; j < n; j++) {
-					Station stationB = map.getStation(j);
+				for (int k = 0; k < 10; k++) {
+					Station stationB = stationA.getNearestStations().get(k);
+					int j = map.getStationIndex(stationB);
 
 					// overlapping labels
-					if (!((getValue(x[i]) >= (getValue(x[j]) + u.getStringWidth(stationB.getName()) + margin))
-							|| (getValue(x[j]) >= (getValue(x[i]) + u.getStringWidth(stationA.getName()) + margin))
-							|| (getValue(y[i]) >= (getValue(y[j]) + margin))
-							|| (getValue(y[j]) >= (getValue(y[i]) + margin)))) {
+					if (!((getValue(x[i]) >= (getValue(x[j]) + u.getStringWidth(stationB.getName()) + marginX))
+							|| (getValue(x[j]) >= (getValue(x[i]) + u.getStringWidth(stationA.getName()) + marginX))
+							|| (getValue(y[i]) >= (getValue(y[j]) + marginY))
+							|| (getValue(y[j]) >= (getValue(y[i]) + marginY)))) {
 						overlapping = true;
 						System.out.println(
 								stationA.getName() + " & " + stationB.getName() + " overlapping. Adding constraint");
 
 						if (stationA.getX() <= stationB.getX()) {
 							this.add(cplex.ge(cplex.diff(cplex.diff(x[j], x[i]),
-									cplex.prod(a[i][j], u.getStringWidth(stationA.getName()) + margin)), 0));
+									cplex.prod(a[i][j], u.getStringWidth(stationA.getName()) + marginX)), 0));
 
 							if (stationA.getY() <= stationB.getY()) {
 								this.add(cplex.ge(
-										cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + margin)), 0));
+										cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + marginY)), 0));
 							} else {
 								this.add(cplex.ge(
-										cplex.diff(cplex.diff(y[i], y[j]), cplex.prod(b[i][j], height + margin)), 0));
+										cplex.diff(cplex.diff(y[i], y[j]), cplex.prod(b[i][j], height + marginY)), 0));
 							}
 
 						} else {
 							this.add(cplex.ge(cplex.diff(cplex.diff(x[i], x[j]),
-									cplex.prod(a[i][j], u.getStringWidth(stationB.getName()) + margin)), 0));
+									cplex.prod(a[i][j], u.getStringWidth(stationB.getName()) + marginX)), 0));
 
 							if (stationA.getY() >= stationB.getY()) {
 								this.add(cplex.ge(
-										cplex.diff(cplex.diff(y[i], y[j]), cplex.prod(b[i][j], height + margin)), 0));
+										cplex.diff(cplex.diff(y[i], y[j]), cplex.prod(b[i][j], height + marginY)), 0));
 							} else {
 								this.add(cplex.ge(
-										cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + margin)), 0));
+										cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + marginY)), 0));
 							}
 						}
 					}
 				}
+			}
+			if (overlapping == false) {
+				for (int i = 0; i < n; i++) {
+					Station stationA = map.getStation(i);
 
-				/*for (Station stationB : stationA.getAdjacentStations()) {
-					int j = map.getStationIndex(stationB);
-					if (Math.pow(getValue(x[i]) - getValue(x[j]), 2)
-							+ Math.pow(getValue(y[i]) - getValue(y[j]), 2) > 5000) {
-						//this.add(cplex.ge(cplex.square(x[i]),1));
-						//System.out.println(stationA + " " + stationB);
-					}
-					
-					if (stationA.getX() >= stationB.getX()) {
+					for (int j = i + 1; j < n; j++) {
+						Station stationB = map.getStation(j);
 
-						cplex.addGe(x[i], x[j]);
-						cplex.addLe(cplex.square(cplex.diff(x[i], x[j])), dx[i][j]);
-					} else {
-						cplex.addLe(x[i], x[j]);
-						cplex.addLe(cplex.square(cplex.diff(x[j], x[i])), dx[i][j]);
+						// overlapping labels
+						if (!((getValue(x[i]) >= (getValue(x[j]) + u.getStringWidth(stationB.getName()) + marginX))
+								|| (getValue(x[j]) >= (getValue(x[i]) + u.getStringWidth(stationA.getName()) + marginX))
+								|| (getValue(y[i]) >= (getValue(y[j]) + marginY))
+								|| (getValue(y[j]) >= (getValue(y[i]) + marginY)))) {
+							overlapping = true;
+							System.out.println(stationA.getName() + " & " + stationB.getName()
+									+ " overlapping. Adding constraint");
+							if (stationA.getX() <= stationB.getX()) {
+								this.add(cplex.ge(
+										cplex.diff(cplex.diff(x[j], x[i]),
+												cplex.prod(a[i][j], u.getStringWidth(stationA.getName()) + marginX)),
+										0));
+
+								if (stationA.getY() <= stationB.getY()) {
+									this.add(cplex.ge(
+											cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + marginY)),
+											0));
+								} else {
+									this.add(cplex.ge(
+											cplex.diff(cplex.diff(y[i], y[j]), cplex.prod(b[i][j], height + marginY)),
+											0));
+								}
+
+							} else {
+								this.add(cplex.ge(
+										cplex.diff(cplex.diff(x[i], x[j]),
+												cplex.prod(a[i][j], u.getStringWidth(stationB.getName()) + marginX)),
+										0));
+
+								if (stationA.getY() >= stationB.getY()) {
+									this.add(cplex.ge(
+											cplex.diff(cplex.diff(y[i], y[j]), cplex.prod(b[i][j], height + marginY)),
+											0));
+								} else {
+									this.add(cplex.ge(
+											cplex.diff(cplex.diff(y[j], y[i]), cplex.prod(b[i][j], height + marginY)),
+											0));
+								}
+							}
+						}
 					}
 
-					if (stationA.getY() >= stationB.getY()) {
-						cplex.addGe(y[i], y[j]);
-						cplex.addLe(cplex.square(cplex.diff(y[i], y[j])), dy[i][j]);
-					} else {
-						cplex.addLe(y[i], y[j]);
-						cplex.addLe(cplex.square(cplex.diff(y[j], y[i])), dy[i][j]);
+					if (overlapping == false) {
+						for (int j = 0; j < map.getStations().size(); j++) {
+							if (j != i) {
+								Station stationB = map.getStation(j);
+								for (Station stationC : stationB.getAdjacentStations()) {
+									int k = map.getStationIndex(stationC);
+									if (cuts[i][j][k] == false) {
+										if (getValue(x[j]) == getValue(x[k])) {
+											if (getValue(x[i]) < getValue(x[j]) && getValue(x[i])
+													+ u.getStringWidth(stationA.getName()) + marginX > getValue(x[j])) {
+												if (getValue(y[i]) < Math.max(getValue(y[j]), getValue(y[k]))
+														&& getValue(y[i]) > Math.min(getValue(y[j]), getValue(y[k]))) {
+													System.out.println(
+															stationA + " overlaps " + stationB + "-" + stationC);
+													this.add(cplex.ge(
+															cplex.diff(x[j], cplex.sum(x[i],
+																	u.getStringWidth(stationA.getName()) + marginX)),
+															0));
+													cuts[i][j][k] = true;
+													cuts[i][k][j] = true;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
-				}*/
+				}
 			}
 
 		}

@@ -99,7 +99,19 @@ public class Output {
 			String graphName = C.graphName;
 
 			if (OS.contains("win")) {
-
+				File theDirOut = new File("output");
+				if (!theDirOut.exists()) {
+					try {
+						theDirOut.mkdir();
+					} catch (SecurityException se) {
+						System.out.println("Problem mit der Output Folder Erstellung bei Windows");
+					}
+				}
+				File theDir = new File("output/" + graphName);
+				if (!theDir.exists()) {
+					theDir.mkdirs();
+				}
+				
 				ImageIO.write(bufferedImage, "png",
 						new File("output\\" + graphName +"\\" + name + ".png"));
 
