@@ -1,6 +1,7 @@
 
 public class Core {
-	public static String graphName = "sydney";
+	public static String graphName = "london";
+	
 
 	public static void main(String[] args) {
 		XMLParser parser = new XMLParser();
