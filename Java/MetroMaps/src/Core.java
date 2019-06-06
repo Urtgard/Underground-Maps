@@ -7,7 +7,7 @@ public class Core {
 		
 		XMLParser parser = new XMLParser();
 		// MetroMap map = parser.getMapFromXML("berlin.xml");
-		Core c = new Core();
+		
 		MetroMap map = parser.getMapFromXML(config.name + ".graphml");
 		// System.out.println(map);
 		Solver s = new Solver();

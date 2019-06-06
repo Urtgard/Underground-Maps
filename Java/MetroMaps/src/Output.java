@@ -95,9 +95,9 @@ public class Output {
 		try {
 
 			String OS = System.getProperty("os.name").toLowerCase();
-			Core C = new Core();
-			String graphName = C.graphName;
-
+			Config config = Config.getInstance();
+			String graphName = config.name;
+			
 			if (OS.contains("win")) {
 				File theDirOut = new File("output");
 				if (!theDirOut.exists()) {
