@@ -1,6 +1,8 @@
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.text.DateFormat;
@@ -12,14 +14,14 @@ import javax.imageio.ImageIO;
 public class Output {
 	boolean bigline = false;
 
-	public void createImage(MetroMap map, double[] x, double[] y) {
+	public void createImage(MetroMap map, double[] x, double[] y, double[] labelX, double[] labelY) {
 		DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy-HH-mm-ss");
 		Date date = new Date();
 		String name = dateFormat.format(date);
-		createImage(map, x, y, name);
+		createImage(map, x, y, labelX, labelY, name);
 	}
 
-	public void createImage(MetroMap map, double[] x, double[] y, String name) {
+	public void createImage(MetroMap map, double[] x, double[] y, double[] labelX, double[] labelY, String name) {
 		int n = map.getStations().size();
 		boolean[][] lineDrawn = new boolean[n][n];
 		int width = 20;
@@ -29,35 +31,59 @@ public class Output {
 				width = (int) Math.round(value);
 			}
 		}
+//		for (double value : labelX) {
+//			if (value > width) {
+//				width = (int) Math.round(value);
+//			}
+//		}
 		for (double value : y) {
 			if (value > height) {
 				height = (int) Math.round(value);
 			}
 		}
+//		for (double value : labelY) {
+//			if (value > height) {
+//				height = (int) Math.round(value);
+//			}
+//		}
 		width += 14 + 200;
 		height += 14;
 
-		BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		BufferedImage bufferedImage = new BufferedImage(width, height + 20, BufferedImage.TYPE_INT_RGB);
 
 		Graphics graphics = bufferedImage.getGraphics();
 		graphics.setColor(Color.WHITE);
-		graphics.fillRect(0, 0, width, height);
+		graphics.fillRect(0, 0, width, height + 20);
 		graphics.setColor(Color.BLACK);
 		graphics.setFont(new Font("Arial", Font.PLAIN, 14));
 
 		Utility u = new Utility();
 		for (int i = 0; i < n; i++) {
+			
 			Station station = map.getStation(i);
 			int numLines = station.getLines().size();
-			for (int j = 0; j < numLines; j++) {
+			/*for (int j = 0; j < numLines; j++) {
 				graphics.setColor(station.getLines().get(j).getColor());
 				graphics.fillRect((int) Math.round(x[i]), height - (int) Math.round(y[i]) - 12 + 14 / numLines * j,
 						u.getStringWidth(station.getName()), 14 / numLines);
-			}
+			}*/
 			graphics.setColor(Color.BLACK);
-			graphics.drawString(station.getName(), (int) Math.round(x[i]), height - (int) Math.round(y[i]));
+			Graphics2D g2 = (Graphics2D) graphics;
+			g2.setStroke(new BasicStroke(2));
+			g2.drawOval((int) x[i] - 5, height - 5 - (int) y[i],10,10);
+			
+	graphics.drawString(station.getName(), (int) x[i] - u.getStringWidth(station.getName())/2, height - (int) y[i] + 6);
 
 			// draw line
+//			for (Station s : station.getAdjacentStations()) {
+//				int j = map.getStationIndex(s);
+//				if (lineDrawn[i][j] == false) {
+//					lineDrawn[i][j] = true;
+//					lineDrawn[j][i] = true;
+//					graphics.drawLine((int) x[i], height - (int) y[i],(int) x[j] , height - (int) y[j]);
+//					
+//				}
+//			}
 			if (bigline == true) {
 				for (Station s : station.getAdjacentStations()) {
 					int j = map.getStationIndex(s);
@@ -95,8 +121,8 @@ public class Output {
 		try {
 
 			String OS = System.getProperty("os.name").toLowerCase();
-			Core C = new Core();
-			String graphName = C.graphName;
+			Config config = Config.getInstance();
+			String graphName = config.name;
 
 			if (OS.contains("win")) {
 				File theDirOut = new File("output");
