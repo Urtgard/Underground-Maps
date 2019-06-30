@@ -66,14 +66,20 @@ public class Displayer {
 		
 		//DIESER TEIL IST NOCH NCIHT FERTIG. DIES IST ALSO NUR EINE VORLAGE
 		
+		
 		//platziere Buttons
 		for(int i=0;i<stations.size();i++) {
 			JButton tmp = new JButton(stations.get(i).getName());
-			
+			Listener l = new Listener(stations.get(i));
+			tmp.addActionListener(l);
+			//erzeuge maße von Button und Location
+			//tmp.setBounds(x, y, width, height);
+			window.add(tmp);
 			
 			
 		}
 		
 		
 	}
+
 }
