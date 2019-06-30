@@ -29,6 +29,7 @@ public class Displayer {
 		frame.setTitle("U-Bahn Visualisation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(null);	
+		frame.setVisible(true);
 		return frame;
 	}
 	
