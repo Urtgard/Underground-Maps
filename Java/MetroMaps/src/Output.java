@@ -1,4 +1,5 @@
 import java.awt.BasicStroke;
+import GuiTool.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -7,7 +8,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -21,6 +24,28 @@ public class Output {
 		createImage(map, x, y, labelX, labelY, name);
 	}
 
+	public void createWindow(MetroMap map, double[] x, double[] y,ArrayList<int[]> lageBez){
+		
+		ArrayList<Button> buttonlist = new ArrayList<Button>();
+		for(int i=0;i<map.getStations().size();i++){
+			
+			ArrayList<Neighbour> N = new ArrayList<Neighbour>();
+			for(int j = 0; j<map.getStations().get(i).getAdjacentStations(); j++){
+				Neighbour n = new Neighbour(s.getName(), lageBez.get(i))
+			}
+			Station s = map.getStations().get(i);
+			ArrayList<String> linien = new ArrayList<String>();
+			for(Line l : map.getStations().get(i).getLines()){
+				linien.add(l.getName());
+			}
+			Button b = new Button(linien, s.getName(), x[i], y[i], N);
+			buttonlist.add(b);
+		}
+			
+		Displayer D = new Displayer(buttonlist);
+		
+		
+	}
 	public void createImage(MetroMap map, double[] x, double[] y, double[] labelX, double[] labelY, String name) {
 		int n = map.getStations().size();
 		boolean[][] lineDrawn = new boolean[n][n];

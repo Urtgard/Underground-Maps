@@ -1,9 +1,10 @@
-
+import GuiTool.*;
 public class Config {
 	private static Config instance;
 	
 	String name;
-
+	
+			
 	private Config() {
 	}
 

@@ -77,7 +77,7 @@ public class Solver {
 		try {
 			// define new model
 			this.cplex = new IloCplex();
-			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0);
+			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.9);
 //			cplex.setParam(IloCplex.Param.Parallel, 1);
 //			cplex.setParam(IloCplex.Param.Threads, 4);
 
@@ -196,7 +196,7 @@ public class Solver {
 			
 			int minDistance = 40;
 			for (int i = 0; i < n; i++) {
-				Station stationA = map.getStation(i);
+				final Station stationA = map.getStation(i);
 
 				cplex.addGe(x[i], utility.getStringWidth(stationA.getName())/2+10);
 				// label position
@@ -560,6 +560,7 @@ public class Solver {
 				// circular vertex orders			
 				int deg = stationA.getAdjacentStations().size();
 				Collections.sort(stationA.getAdjacentStations(), new Comparator<Station>() {
+
 					@Override
 					public int compare(Station sA, Station sB)
 					{
@@ -642,10 +643,33 @@ public class Solver {
 			cplex.use(new InfoCallback());
 
 			if (cplex.solve()) {
-				System.out.println("obj = " + cplex.getObjValue());
+//				System.out.println("obj = " + cplex.getObjValue());
 				Output output = new Output();
 				output.createImage(map, cplex.getValues(x), cplex.getValues(y), cplex.getValues(labelX),
 						cplex.getValues(labelY));
+				ArrayList<ArrayList<int[]>> lageBez = new ArrayList<ArrayList<int[]>>();
+				
+				for(int i = 0; i<n; i++){
+					for(int j = 0; j<n;j++){
+						int sec = sec(i, j);
+						if(cplex.getValue(Aprec[i][j]) == 1){
+							int[] abc = {-1,sec};
+							lageBez.add(abc);
+						} else if (cplex.getValue(Aprec[i][j]) == 1){
+							int[] abc = {0,sec};
+							lageBez.add(abc);
+//							, cplex.sum(Aorig[i][j], Asucc[i][j]
+						} else {
+							int[] abc = {1,sec};
+							lageBez.add(abc);
+						}
+					}
+				}
+				
+			output.createWindow(map, cplex.getValues(x), cplex.getValues(y), lageBez);
+				
+				
+				
 			} else {
 				System.out.println("problem not solved");
 			}
@@ -703,6 +727,7 @@ public class Solver {
 				Output output = new Output();
 				output.createImage(map, getIncumbentValues(x), getIncumbentValues(y), getIncumbentValues(labelX),
 						getIncumbentValues(labelY));
+		//		output.createWindow(map, cplex.getValues(x), cplex.getValues(y));
 			}
 			// System.out.println(getBestObjValue());
 			// System.out.println(getIncumbentObjValue());
@@ -717,7 +742,7 @@ public class Solver {
 			Utility utility = new Utility();
 			Output output = new Output();
 			output.createImage(map, getValues(x), getValues(y), getValues(labelX), getValues(labelY));
-
+//			output.createWindow(map, cplex.getValues(x), cplex.getValues(y));
 			boolean overlapping = false;
 			boolean cuts[][][] = new boolean[n][n][n];
 
