@@ -24,20 +24,23 @@ public class Output {
 		createImage(map, x, y, labelX, labelY, name);
 	}
 
-	public void createWindow(MetroMap map, double[] x, double[] y,ArrayList<int[]> lageBez){
+	public void createWindow(MetroMap map, double[] x, double[] y, ArrayList<ArrayList<int[]>> lageBez){
 		
 		ArrayList<Button> buttonlist = new ArrayList<Button>();
 		for(int i=0;i<map.getStations().size();i++){
+			Station s = map.getStation(i);
 			
 			ArrayList<Neighbour> N = new ArrayList<Neighbour>();
-			for(int j = 0; j<map.getStations().get(i).getAdjacentStations(); j++){
-				Neighbour n = new Neighbour(s.getName(), lageBez.get(i))
+			for(int j = 0; j < s.getAdjacentStations().size(); j++){
+				Neighbour n = new Neighbour(s.getAdjacentStations().get(j).getName(), lageBez.get(i).get(j)[0], lageBez.get(i).get(j)[1]);
+				N.add(n);
 			}
-			Station s = map.getStations().get(i);
+
 			ArrayList<String> linien = new ArrayList<String>();
 			for(Line l : map.getStations().get(i).getLines()){
 				linien.add(l.getName());
 			}
+			
 			Button b = new Button(linien, s.getName(), x[i], y[i], N);
 			buttonlist.add(b);
 		}

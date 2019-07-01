@@ -336,7 +336,10 @@ public class Solver {
 					edges.add(new edge(i, j));
 
 					cplex.add(cplex.eq(cplex.sum(Aprec[i][j], cplex.sum(Aorig[i][j], Asucc[i][j])), 1));
-
+										
+					cplex.add(Aprec[i][j]);
+					cplex.add(Aorig[i][j]);
+					
 					int sec_u = sec(stationA, stationB);
 					cplex.add(cplex.eq(dir[i][j], cplex.sum(cplex.prod(sec_u - 1 % 8, Aprec[i][j]),
 							cplex.sum(cplex.prod(sec_u, Aorig[i][j]), cplex.prod(sec_u + 1 % 8, Asucc[i][j])))));
@@ -649,21 +652,25 @@ public class Solver {
 						cplex.getValues(labelY));
 				ArrayList<ArrayList<int[]>> lageBez = new ArrayList<ArrayList<int[]>>();
 				
-				for(int i = 0; i<n; i++){
-					for(int j = 0; j<n;j++){
+				for(int i = 0; i < n; i++){
+					ArrayList<int[]> N = new ArrayList<int[]>();
+					for(Station neighbour : map.getStation(i).getAdjacentStations()) {
+//					for(int k = 0; k < map.getStation(i).getAdjacentStations().size(); k++){
+						int j = map.getStationIndex(neighbour);//map.getStationIndex(map.getStation(k));
 						int sec = sec(i, j);
+						int sec_;
+											
 						if(cplex.getValue(Aprec[i][j]) == 1){
-							int[] abc = {-1,sec};
-							lageBez.add(abc);
-						} else if (cplex.getValue(Aprec[i][j]) == 1){
-							int[] abc = {0,sec};
-							lageBez.add(abc);
-//							, cplex.sum(Aorig[i][j], Asucc[i][j]
+							sec_ = -1;
+						} else if (cplex.getValue(Aorig[i][j]) == 1){
+							sec_ = 0;
 						} else {
-							int[] abc = {1,sec};
-							lageBez.add(abc);
+							sec_ = 1;
 						}
+						int[] abc = {(sec_+sec)%8, sec};
+						N.add(abc);
 					}
+					lageBez.add(i, N);
 				}
 				
 			output.createWindow(map, cplex.getValues(x), cplex.getValues(y), lageBez);
