@@ -20,7 +20,12 @@ public class Output {
 		String name = dateFormat.format(date);
 		createImage(map, x, y, labelX, labelY, name);
 	}
-
+/*
+	public void createTextFile(MetroMap map, double[] x, double[] y, double[] labelX, double[] labelY, String name) {
+		
+	}
+	*/
+	
 	public void createImage(MetroMap map, double[] x, double[] y, double[] labelX, double[] labelY, String name) {
 		int n = map.getStations().size();
 		boolean[][] lineDrawn = new boolean[n][n];
