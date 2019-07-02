@@ -1,9 +1,19 @@
 package GuiTool;
 
 import java.awt.Dimension;
+
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
 import java.awt.Toolkit;
+
 import java.util.ArrayList;
-import java.util.List;
+
+
+import java.awt.image.BufferedImage;
+
+
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,12 +21,18 @@ import javax.swing.JFrame;
 public class Displayer {
 
 	ArrayList<JButton> list;
+
 	
-	public Displayer(List <Station> stations) {
+	public Displayer(ArrayList <Button> buttons) {
 		
 		
 		JFrame window = createDisplay();
-		this.setButtons(window, stations);
+
+		this.setButtons(window, buttons);
+
+		setButtons(window, buttons);
+		window.setVisible(true);
+
 	}
 	
 	
@@ -25,66 +41,75 @@ public class Displayer {
 		
 		JFrame frame = new JFrame();
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();	
-		frame.setSize((int)dim.getWidth()-100, (int)dim.getHeight()-100);
+		frame.setSize((int)dim.getWidth(), (int)dim.getHeight());
 		frame.setLocation(0, 0);
 		frame.setTitle("U-Bahn Visualisation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(null);	
-		frame.setVisible(true);
 		return frame;
 	}
 	
 	//soll Buttons initalisieren
-	public void setButtons(JFrame window, List <Station> stations) {
+	public void setButtons(JFrame window, ArrayList <Button> buttons) {
 		
 		//stellt Größe des Bildschirms fest
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();	
 		int width = (int)dim.getWidth()-100;
-		int height = (int)dim.getHeight()-100;
+		int height = (int)dim.getHeight()-40;
 		
 		
-		double maxX = stations.get(0).getX();
-		double minX = maxX;
-		double maxY = stations.get(0).getY();
-		double minY = maxY;
+		double maxX = buttons.get(0).getX();
+		
+		double maxY = buttons.get(0).getY();
+		
 		
 		
 		//finde max und min Koordinaten
-		for(int i=0; i< stations.size();i++) {
-			if(stations.get(i).getX()>maxX) {
-				maxX = stations.get(i).getX();
+		for(int i=0; i< buttons.size();i++) {
+			if(buttons.get(i).getX()>maxX) {
+				maxX = buttons.get(i).getX();
 			}
-			if(stations.get(i).getX()<minX) {
-				minX = stations.get(i).getX();
+			if(buttons.get(i).getY()>maxY) {
+				maxY = buttons.get(i).getY();
 			}	
-			if(stations.get(i).getY()>maxY) {
-				maxY = stations.get(i).getY();
-			}		
-			if(stations.get(i).getX()<minY) {
-				minY = stations.get(i).getY();
-			}
 		}
+		maxX = width/maxX;
+		maxY = height/maxY;
 		
-		//DIESER TEIL IST NOCH NCIHT FERTIG. DIES IST ALSO NUR EINE VORLAGE
+		
 		
 		ArrayList<JButton> list = new ArrayList<JButton>();
 		
 		//platziere Buttons
-		for(int i=0;i<stations.size();i++) {
-			JButton tmp = new JButton(stations.get(i).getName());
-			Listener l = new Listener(stations.get(i));
+		for(int i=0;i<buttons.size();i++) {
+			JButton tmp = new JButton(buttons.get(i).getName());
+			Listener l = new Listener(buttons.get(i));
 			tmp.addActionListener(l);
 			//erzeuge maße von Button und Location
-			//tmp.setBounds(x, y, width, height);
-			window.add(tmp);
+			int breite =  getStringWidth(buttons.get(i).getName());
+			tmp.setBounds((int)(((buttons.get(i).getX()-breite/2)*maxX)+50), (int)(height - (buttons.get(i).getY()+7)*maxY +20),(int)(breite*maxX), (int)(14*maxY));
 			
+
 			list.add(tmp);
+
+			window.add(tmp);
+
 			
 		}
 		//Speichere Buttons, um später darauf zugreifen zu können
 		this.list = list;
 		
 		
+	}
+	
+	public int getStringWidth(String str) {
+		BufferedImage i2 = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
+		Graphics2D g = i2.createGraphics();
+		g.setFont(new Font("Arial", Font.PLAIN, 14));
+		FontMetrics fm = g.getFontMetrics();
+		// Rectangle2D bounds = fm.getStringBounds(str, g);
+		// return (int) bounds.getWidth();
+		return fm.stringWidth(str);
 	}
 
 }

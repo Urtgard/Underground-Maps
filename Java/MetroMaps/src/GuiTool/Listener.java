@@ -5,16 +5,25 @@ import java.awt.event.ActionListener;
 
 public class Listener implements ActionListener{
 
-	public Station s;
-	public Listener(Station s) {
+	public Button s;
+	
+	public Listener(Button s) {
 		this.s = s;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println(this.s.getName());
-		for(int i=0;i<this.s.getConstraints().size();i++) {
-			System.out.println(this.s.getConstraints().get(i));
+
+		System.out.println("  Linien: ");
+		for(int i=0;i<this.s.getLinienName().size();i++) {
+			System.out.println("    "+this.s.getLinienName().get(i));
+		}
+		System.out.println("  Nachbarn: ");
+		for(int i=0;i<this.s.getN().size();i++) {
+			System.out.println("    "+this.s.getN().get(i).name);
+			System.out.println("      SekPlan: "+this.s.getN().get(i).eins);
+			System.out.println("      SekOrig: "+this.s.getN().get(i).zwei+"\n");
 		}
 	}
 

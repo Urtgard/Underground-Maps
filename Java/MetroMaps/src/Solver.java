@@ -77,7 +77,7 @@ public class Solver {
 		try {
 			// define new model
 			this.cplex = new IloCplex();
-			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0);
+			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.9);
 //			cplex.setParam(IloCplex.Param.Parallel, 1);
 //			cplex.setParam(IloCplex.Param.Threads, 4);
 
@@ -196,7 +196,7 @@ public class Solver {
 			
 			int minDistance = 40;
 			for (int i = 0; i < n; i++) {
-				Station stationA = map.getStation(i);
+				final Station stationA = map.getStation(i);
 
 				cplex.addGe(x[i], utility.getStringWidth(stationA.getName())/2+10);
 				// label position
@@ -336,7 +336,10 @@ public class Solver {
 					edges.add(new edge(i, j));
 
 					cplex.add(cplex.eq(cplex.sum(Aprec[i][j], cplex.sum(Aorig[i][j], Asucc[i][j])), 1));
-
+										
+					cplex.add(Aprec[i][j]);
+					cplex.add(Aorig[i][j]);
+					
 					int sec_u = sec(stationA, stationB);
 					cplex.add(cplex.eq(dir[i][j], cplex.sum(cplex.prod(sec_u - 1 % 8, Aprec[i][j]),
 							cplex.sum(cplex.prod(sec_u, Aorig[i][j]), cplex.prod(sec_u + 1 % 8, Asucc[i][j])))));
@@ -560,6 +563,7 @@ public class Solver {
 				// circular vertex orders			
 				int deg = stationA.getAdjacentStations().size();
 				Collections.sort(stationA.getAdjacentStations(), new Comparator<Station>() {
+
 					@Override
 					public int compare(Station sA, Station sB)
 					{
@@ -642,10 +646,37 @@ public class Solver {
 			cplex.use(new InfoCallback());
 
 			if (cplex.solve()) {
-				System.out.println("obj = " + cplex.getObjValue());
+//				System.out.println("obj = " + cplex.getObjValue());
 				Output output = new Output();
 				output.createImage(map, cplex.getValues(x), cplex.getValues(y), cplex.getValues(labelX),
 						cplex.getValues(labelY));
+				ArrayList<ArrayList<int[]>> lageBez = new ArrayList<ArrayList<int[]>>();
+				
+				for(int i = 0; i < n; i++){
+					ArrayList<int[]> N = new ArrayList<int[]>();
+					for(Station neighbour : map.getStation(i).getAdjacentStations()) {
+//					for(int k = 0; k < map.getStation(i).getAdjacentStations().size(); k++){
+						int j = map.getStationIndex(neighbour);//map.getStationIndex(map.getStation(k));
+						int sec = sec(i, j);
+						int sec_;
+											
+						if(cplex.getValue(Aprec[i][j]) == 1){
+							sec_ = -1;
+						} else if (cplex.getValue(Aorig[i][j]) == 1){
+							sec_ = 0;
+						} else {
+							sec_ = 1;
+						}
+						int[] abc = {(sec_+sec)%8, sec};
+						N.add(abc);
+					}
+					lageBez.add(i, N);
+				}
+				
+			output.createWindow(map, cplex.getValues(x), cplex.getValues(y), lageBez);
+				
+				
+				
 			} else {
 				System.out.println("problem not solved");
 			}
@@ -703,6 +734,7 @@ public class Solver {
 				Output output = new Output();
 				output.createImage(map, getIncumbentValues(x), getIncumbentValues(y), getIncumbentValues(labelX),
 						getIncumbentValues(labelY));
+		//		output.createWindow(map, cplex.getValues(x), cplex.getValues(y));
 			}
 			// System.out.println(getBestObjValue());
 			// System.out.println(getIncumbentObjValue());
@@ -717,7 +749,7 @@ public class Solver {
 			Utility utility = new Utility();
 			Output output = new Output();
 			output.createImage(map, getValues(x), getValues(y), getValues(labelX), getValues(labelY));
-
+//			output.createWindow(map, cplex.getValues(x), cplex.getValues(y));
 			boolean overlapping = false;
 			boolean cuts[][][] = new boolean[n][n][n];
 

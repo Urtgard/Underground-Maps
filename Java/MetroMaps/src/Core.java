@@ -1,6 +1,8 @@
+import GuiTool.*;
 
 public class Core {
 	public static void main(String[] args) {
+		
 		Config config = Config.getInstance();
 		config.name = "wien";
 		
