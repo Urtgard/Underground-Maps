@@ -17,6 +17,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Displayer {
 
@@ -52,11 +53,15 @@ public class Displayer {
 	//soll Buttons initalisieren
 	public void setButtons(JFrame window, ArrayList <Button> buttons) {
 		
+		JPanel p = new JPanel();
+		
 		//stellt Größe des Bildschirms fest
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();	
 		int width = (int)dim.getWidth()-100;
 		int height = (int)dim.getHeight()-40;
 		
+		p.setSize((int)dim.getWidth(), (int)dim.getHeight());
+		p.setLayout(null);
 		
 		double maxX = buttons.get(0).getX();
 		
@@ -92,14 +97,14 @@ public class Displayer {
 
 			list.add(tmp);
 
-			window.add(tmp);
+			p.add(tmp);
 
 			
 		}
 		//Speichere Buttons, um später darauf zugreifen zu können
 		this.list = list;
-		
-		
+		p.setVisible(true);
+		window.add(p);
 	}
 	
 	public int getStringWidth(String str) {
