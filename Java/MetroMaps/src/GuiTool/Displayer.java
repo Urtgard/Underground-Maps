@@ -2,6 +2,7 @@ package GuiTool;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -9,13 +10,13 @@ import javax.swing.JFrame;
 
 public class Displayer {
 
-	
+	ArrayList<JButton> list;
 	
 	public Displayer(List <Station> stations) {
 		
 		
 		JFrame window = createDisplay();
-		setButtons(window, stations);
+		this.setButtons(window, stations);
 	}
 	
 	
@@ -66,6 +67,7 @@ public class Displayer {
 		
 		//DIESER TEIL IST NOCH NCIHT FERTIG. DIES IST ALSO NUR EINE VORLAGE
 		
+		ArrayList<JButton> list = new ArrayList<JButton>();
 		
 		//platziere Buttons
 		for(int i=0;i<stations.size();i++) {
@@ -76,8 +78,11 @@ public class Displayer {
 			//tmp.setBounds(x, y, width, height);
 			window.add(tmp);
 			
+			list.add(tmp);
 			
 		}
+		//Speichere Buttons, um später darauf zugreifen zu können
+		this.list = list;
 		
 		
 	}
