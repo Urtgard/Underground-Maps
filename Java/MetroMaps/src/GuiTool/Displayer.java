@@ -1,15 +1,17 @@
 package GuiTool;
 
+import java.awt.Color;
+
 import java.awt.Dimension;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Toolkit;
-
+import backEnd.Line;
 import java.util.ArrayList;
-
-
+import java.util.Map;
 import java.awt.image.BufferedImage;
 
 
@@ -18,6 +20,8 @@ import java.awt.image.BufferedImage;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+
 
 public class Displayer {
 
@@ -94,13 +98,34 @@ public class Displayer {
 			int breite =  getStringWidth(buttons.get(i).getName());
 			tmp.setBounds((int)(((buttons.get(i).getX()-breite/2)*maxX)+50), (int)(height - (buttons.get(i).getY()+7)*maxY +20),(int)(breite*maxX), (int)(14*maxY));
 			
-
 			list.add(tmp);
 
 			p.add(tmp);
-
-			
 		}
+	
+		/*
+		Map<String, Line> m = buttons.get(0).getL();
+		ArrayList<Line> goodList = new ArrayList<Line>();
+		
+		for(Line value : m.values()) {
+			goodList.add(value);
+		}
+		
+		for(int i=0;i<goodList.size();i++) {
+			for(int q=0;q<goodList.get(i).getStations().size()-1;q++) {
+				for(int z=0;z<buttons.size();z++) {
+					if(buttons.get(z).getName()==goodList.get(i).getStations().get(q).getName()) {
+						for(int b=0;b<buttons.size();b++) {
+							if(buttons.get(b).getName()==goodList.get(i).getStations().get(q+1).getName()) {
+								paintLines(p, (int)(buttons.get(z).getX()*maxX+50), (int)(height - (buttons.get(z).getY()*maxY +20)), )
+							}
+						}
+					}
+				}
+			}
+		}
+		*/
+		
 		//Speichere Buttons, um später darauf zugreifen zu können
 		this.list = list;
 		p.setVisible(true);
@@ -117,4 +142,17 @@ public class Displayer {
 		return fm.stringWidth(str);
 	}
 
+	
+	protected void paintLines(Graphics g, int StartX, int StartY, int EndX, int EndY, int lineNumber) {
+		 
+		if(lineNumber ==0) {
+			
+		}
+		
+		g.setColor( Color.red );
+		// X Start, Y Start, X End, Y End
+		// X = <---------->
+		g.drawLine ( 0, 0, 240, 50 );
+ 
+	}
 }

@@ -2,7 +2,9 @@ package GuiTool;
 
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+
+import backEnd.Line;
 
 
 public class Button {
@@ -11,8 +13,12 @@ public class Button {
 	private double x;
 	private double y;
 	private ArrayList<Neighbour> N;
+	private Map<String,Line> l;
 	
 	
+	
+	
+
 	//constructor
 	public Button(ArrayList<String> linienName, String name, double x, double y, ArrayList<Neighbour> N) {
 		this.linienName = linienName;
@@ -22,11 +28,29 @@ public class Button {
 		this.N = N;
 	}
 	
+	public Button(ArrayList<String> linienName, String name, double x, double y, ArrayList<Neighbour> N, Map<String,Line> l) {
+		this.linienName = linienName;
+		this.name = name;
+		this.x = x;
+		this.y = y;
+		this.N = N;
+		this.l = l;
+	}
+	
 	
 	//getter und setter
 	
+	
 	public String getName() {
 		return name;
+	}
+
+	public Map<String, Line> getL() {
+		return l;
+	}
+
+	public void setL(Map<String, Line> l) {
+		this.l = l;
 	}
 
 	public ArrayList<String> getLinienName() {

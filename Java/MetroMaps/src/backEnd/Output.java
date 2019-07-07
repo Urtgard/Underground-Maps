@@ -1,3 +1,4 @@
+package backEnd;
 import java.awt.BasicStroke;
 import GuiTool.*;
 import java.awt.Color;
@@ -42,7 +43,7 @@ public class Output {
 				linien.add(l.getName());
 			}
 			
-			Button b = new Button(linien, s.getName(), x[i], y[i], N);
+			Button b = new Button(linien, s.getName(), x[i], y[i], N, map.getLines());
 			buttonlist.add(b);
 		}
 			

@@ -1,3 +1,4 @@
+package backEnd;
 import GuiTool.*;
 public class Config {
 	private static Config instance;
