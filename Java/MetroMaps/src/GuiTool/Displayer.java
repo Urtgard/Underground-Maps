@@ -57,7 +57,7 @@ public class Displayer {
 	//soll Buttons initalisieren
 	public void setButtons(JFrame window, ArrayList <Button> buttons) {
 		
-		JPanel p = new JPanel();
+		panel p = new panel();
 		
 		//stellt Größe des Bildschirms fest
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();	
@@ -103,32 +103,20 @@ public class Displayer {
 			p.add(tmp);
 		}
 	
-		/*
-		Map<String, Line> m = buttons.get(0).getL();
-		ArrayList<Line> goodList = new ArrayList<Line>();
-		
-		for(Line value : m.values()) {
-			goodList.add(value);
-		}
-		
-		for(int i=0;i<goodList.size();i++) {
-			for(int q=0;q<goodList.get(i).getStations().size()-1;q++) {
-				for(int z=0;z<buttons.size();z++) {
-					if(buttons.get(z).getName()==goodList.get(i).getStations().get(q).getName()) {
-						for(int b=0;b<buttons.size();b++) {
-							if(buttons.get(b).getName()==goodList.get(i).getStations().get(q+1).getName()) {
-								paintLines(p, (int)(buttons.get(z).getX()*maxX+50), (int)(height - (buttons.get(z).getY()*maxY +20)), )
-							}
-						}
-					}
-				}
-			}
-		}
-		*/
 		
 		//Speichere Buttons, um später darauf zugreifen zu können
 		this.list = list;
+		
+		p.initialised=true;
+		p.buttons = buttons;
+		p.width = width;
+		p.height = height;
+		p.maxX = maxX;
+		p.maxY = maxY;
+		
+		p.repaint();
 		p.setVisible(true);
+		
 		window.add(p);
 	}
 	
@@ -143,16 +131,5 @@ public class Displayer {
 	}
 
 	
-	protected void paintLines(Graphics g, int StartX, int StartY, int EndX, int EndY, int lineNumber) {
-		 
-		if(lineNumber ==0) {
-			
-		}
-		
-		g.setColor( Color.red );
-		// X Start, Y Start, X End, Y End
-		// X = <---------->
-		g.drawLine ( 0, 0, 240, 50 );
- 
-	}
+	
 }
