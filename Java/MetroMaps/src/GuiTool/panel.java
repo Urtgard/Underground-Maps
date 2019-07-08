@@ -1,11 +1,11 @@
 package GuiTool;
 
 import java.awt.Color;
-import java.awt.Font;
+
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Map;
-import javax.swing.JButton;
+
 import javax.swing.JPanel;
 import backEnd.Line;
 
