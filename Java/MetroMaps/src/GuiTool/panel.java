@@ -21,6 +21,47 @@ public class panel extends JPanel {
 	Button toDraw;
 	ArrayList<Segment> segments = null;
 
+	public void drawSec(int x1, int y1, int sec, Graphics g) {
+		int x2 = 0;
+		int y2 = 0;
+		g.setColor(Color.BLUE);
+		switch(sec){
+			case 0:
+				x2 = x1 + 25;
+				y2 = y1;
+				break;
+			case 1:
+				x2 = x1 + 18;
+				y2 = y1 - 18;
+				break;
+			case 2:
+				x2 = x1;
+				y2 = y1 - 25;
+				break;
+			case 3:
+				x2 = x1 - 18;
+				y2 = y1 - 18;
+				break;
+			case 4:
+				x2 = x1 - 25;
+				y2 = y1;
+				break;
+			case 5:
+				x2 = x1 - 18;
+				y2 = y1 + 18;
+				break;
+			case 6:
+				x2 = x1;
+				y2 = y1 + 25;
+				break;
+			case 7:
+				x2 = x1 + 18;
+				y2 = y1 + 18;
+				break;
+		}
+		g.drawLine(x1, y1, x2, y2);
+	}
+	
 	@Override
 	public void paint(Graphics g) {
 
@@ -32,13 +73,37 @@ public class panel extends JPanel {
 			//Hier muss die Linie zur eigentlichen Position erstellt werden
 			
 			for (int i = 0; i < this.toDraw.getN().size(); i++) {
-
-				if (this.toDraw.getN().get(i).eins != this.toDraw.getN().get(i).zwei) {
-					g.setColor(Color.RED);
-
-					g.drawLine((int) (toDraw.getX() * maxX + 50), (int) (height - (toDraw.getY()) * maxY + 20),
-							(int) (toDraw.getN().get(i).b.getX() * maxX + 50),
-							(int) (height - (toDraw.getN().get(i).b.getY()) * maxY + 20));
+				int step;
+				int secOrig = this.toDraw.getN().get(i).zwei;
+				if (this.toDraw.getN().get(i).eins == this.toDraw.getN().get(i).zwei) {
+					step = 0;
+				} else if (this.toDraw.getN().get(i).eins == (this.toDraw.getN().get(i).zwei+1)%8) {
+					step = 1;
+				} else {
+					step = -1;
+				}
+					
+				int x1 = (int) (toDraw.getX() * maxX + 50);
+				int y1 = (int) (height - (toDraw.getY()) * maxY + 20);
+				
+				g.setColor(Color.RED);
+				int x2 = (int) (toDraw.getN().get(i).b.getX() * maxX + 50);
+				int y2 = (int) (height - (toDraw.getN().get(i).b.getY()) * maxY + 20);
+				g.drawLine(x1, y1, x2, y2);
+				
+				if (step == 0 || step == -1) {
+					// zeichne nächsten Sektor
+					drawSec(x1, y1, (secOrig+1)%8, g);
+				}
+				
+				if (step == 0 || step == 1) {
+					// zeichne vorherigen Sektor
+					drawSec(x1, y1, (secOrig-1+8)%8, g);
+				}
+				
+				if (step == -1 || step == 1) {
+					// zeichne originalen Sektor
+					drawSec(x1, y1, secOrig, g);
 				}
 			}
 			/*

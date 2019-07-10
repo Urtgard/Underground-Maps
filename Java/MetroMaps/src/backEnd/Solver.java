@@ -79,6 +79,7 @@ public class Solver {
 			// define new model
 			this.cplex = new IloCplex();
 			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.9);
+//			cplex.setParam(IloCplex.Param.TimeLimit, 10);
 //			cplex.setParam(IloCplex.Param.Parallel, 1);
 //			cplex.setParam(IloCplex.Param.Threads, 4);
 

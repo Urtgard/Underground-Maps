@@ -6,8 +6,8 @@ public class Neighbour {
 	
 	String name;
 	Button b;
-	int eins;
-	int zwei;
+	int eins; // Richtung im Plan
+	int zwei; // Richtung in echter Karte
 	
 	public Neighbour(String name, int eins, int zwei){
 		this.name = name;
