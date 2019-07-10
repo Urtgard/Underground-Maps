@@ -11,7 +11,7 @@ import java.awt.Graphics2D;
 import java.awt.Toolkit;
 
 import java.util.ArrayList;
-
+import java.util.Map;
 import java.awt.image.BufferedImage;
 
 
@@ -19,6 +19,8 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+
+import backEnd.Line;
 
 
 
@@ -57,6 +59,26 @@ public class Displayer {
 	//soll Buttons initalisieren
 	public void setButtons(JFrame window, ArrayList <Button> buttons) {
 		
+		//weißt einem Button seine Nachbarn zu
+		for(int i=0;i<buttons.size();i++) {
+			for(int z =0;z<buttons.get(i).getN().size();z++) {
+				for(int p=0;p<buttons.size();p++) {
+					if(buttons.get(i).getN().get(z).name==buttons.get(p).getName()) {
+						buttons.get(i).getN().get(z).b = buttons.get(p);
+					}
+				}
+			}
+		}
+		/*
+		for(int i=0;i<buttons.size();i++) {
+			System.out.println("Station is "+buttons.get(i).getName());
+			System.out.println("Neighbours are");
+			for(int z =0;z<buttons.get(i).getN().size();z++) {
+				System.out.println(buttons.get(i).getN().get(z).name);
+			}
+			
+		}
+		*/
 		panel p = new panel();
 		
 		//stellt Größe des Bildschirms fest
@@ -92,7 +114,7 @@ public class Displayer {
 		//platziere Buttons
 		for(int i=0;i<buttons.size();i++) {
 			JButton tmp = new JButton(buttons.get(i).getName());
-			Listener l = new Listener(buttons.get(i));
+			Listener l = new Listener(buttons.get(i), p);
 			tmp.addActionListener(l);
 			//erzeuge maße von Button und Location
 			int breite =  getStringWidth(buttons.get(i).getName());
@@ -107,14 +129,8 @@ public class Displayer {
 		//Speichere Buttons, um später darauf zugreifen zu können
 		this.list = list;
 		
-		p.initialised=true;
-		p.buttons = buttons;
-		p.width = width;
-		p.height = height;
-		p.maxX = maxX;
-		p.maxY = maxY;
+		paintLines(p , buttons, width, height, maxX, maxY);
 		
-		p.repaint();
 		p.setVisible(true);
 		
 		window.add(p);
@@ -130,6 +146,69 @@ public class Displayer {
 		return fm.stringWidth(str);
 	}
 
+	public void paintLines(panel p, ArrayList<Button> buttons, int width, int height, double maxX, double maxY) {
+		
+		if(p.segments != null) {
+			p.repaint();
+		}
+		else {
+			p.initialised=true;
+			p.buttons = buttons;
+			p.width = width;
+			p.height = height;
+			p.maxX = maxX;
+			p.maxY = maxY;
+			
+			Map<String, Line> m = buttons.get(0).getL();
+			ArrayList<Line> goodList = new ArrayList<Line>();
+			
+			for (Line value : m.values()) {
+				goodList.add(value);
+			}
+
+			ArrayList<Segment> segments = new ArrayList<Segment>();
+
+			for (int i = 0; i < goodList.size(); i++) {
+				
+				for (int q = 0; q < goodList.get(i).getStations().size() - 1; q++) {
+					for (int z = 0; z < buttons.size(); z++) {
+
+						if (buttons.get(z).getName() == goodList.get(i).getStations().get(q).getName()) {
+
+							for (int b = 0; b < buttons.size(); b++) {
+
+								if (buttons.get(b).getName() == goodList.get(i).getStations().get(q + 1)
+										.getName()) {
+
+									int xStart = (int) (buttons.get(z).getX() * maxX + 50);
+									int yStart = (int) (height - (buttons.get(z).getY()) * maxY + 20);
+									int xEnd = (int) (buttons.get(b).getX() * maxX + 50);
+									int yEnd = (int) (height - (buttons.get(b).getY()) * maxY + 20);
+									
+									//System.out.println(xStart+" " + yStart +" " + xEnd +" "+ yEnd);
+									Segment seg = new Segment(xStart,
+											yStart,
+											xEnd,
+											yEnd, i % 10);
+
+									segments.add(seg);
+									
+									/*
+									g.drawLine((int) (buttons.get(z).getX() * maxX + 50),
+											(int) (height - (buttons.get(z).getY()) * maxY + 20),
+											(int) (buttons.get(b).getX() * maxX + 50),
+											(int) (height - (buttons.get(b).getY()) * maxY + 20));
+											*/
+								}
+							}
+						}
+					}
+				}
+			}
+			p.segments = segments;	
+			p.repaint();
+		}
+	}
 	
 	
 }

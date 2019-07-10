@@ -6,13 +6,35 @@ import java.awt.event.ActionListener;
 public class Listener implements ActionListener{
 
 	public Button s;
+	public panel p;
+	public boolean clicked = true;
 	
-	public Listener(Button s) {
+	public Listener(Button s, panel p) {
 		this.s = s;
+		this.p =p;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		if(clicked) {
+			
+			this.p.toDraw = s;
+			this.p.drawConstraint = true;
+			this.p.repaint();
+			clicked = false;
+		}else {
+			
+			this.p.repaint();
+			clicked = true;
+		}
+		
+		
+		
+		
+		
+		
+		/*
 		System.out.println(this.s.getName());
 
 		System.out.println("  Linien: ");
@@ -25,6 +47,7 @@ public class Listener implements ActionListener{
 			System.out.println("      SekPlan: "+this.s.getN().get(i).eins);
 			System.out.println("      SekOrig: "+this.s.getN().get(i).zwei+"\n");
 		}
+		*/
 	}
 
 }
