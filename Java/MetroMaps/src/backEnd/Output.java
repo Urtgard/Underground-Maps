@@ -93,15 +93,19 @@ public class Output {
 			
 			Station station = map.getStation(i);
 			int numLines = station.getLines().size();
-			/*for (int j = 0; j < numLines; j++) {
+			for (int j = 0; j < numLines; j++) {
 				graphics.setColor(station.getLines().get(j).getColor());
-				graphics.fillRect((int) Math.round(x[i]), height - (int) Math.round(y[i]) - 12 + 14 / numLines * j,
-						u.getStringWidth(station.getName()), 14 / numLines);
-			}*/
+				graphics.drawLine((int) Math.round(x[i]) - u.getStringWidth(station.getName())/2, height - (int) Math.round(y[i]) - 12 + 14 / numLines * j,
+						(int) Math.round(x[i]) + u.getStringWidth(station.getName())/2, height - (int) Math.round(y[i]) - 12 + 14 / numLines * j);
+			
+				
+				/*graphics.fillRect((int) Math.round(x[i]), height - (int) Math.round(y[i]) - 12 + 14 / numLines * j,
+						u.getStringWidth(station.getName()), 14 / numLines);*/
+			}
 			graphics.setColor(Color.BLACK);
 			Graphics2D g2 = (Graphics2D) graphics;
 			g2.setStroke(new BasicStroke(2));
-			g2.drawOval((int) x[i] - 5, height - 5 - (int) y[i],10,10);
+		//	g2.drawOval((int) x[i] - 5, height - 5 - (int) y[i],10,10);
 			
 	graphics.drawString(station.getName(), (int) x[i] - u.getStringWidth(station.getName())/2, height - (int) y[i] + 6);
 

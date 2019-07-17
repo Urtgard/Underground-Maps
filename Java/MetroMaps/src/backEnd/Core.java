@@ -5,7 +5,7 @@ public class Core {
 	public static void main(String[] args) {
 		
 		Config config = Config.getInstance();
-		config.name = "wien";
+		config.name = "karlsruhe";
 		
 		XMLParser parser = new XMLParser();
 		// MetroMap map = parser.getMapFromXML("berlin.xml");

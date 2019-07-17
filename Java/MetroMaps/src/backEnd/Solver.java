@@ -78,8 +78,8 @@ public class Solver {
 		try {
 			// define new model
 			this.cplex = new IloCplex();
-			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.9);
-//			cplex.setParam(IloCplex.Param.TimeLimit, 10);
+	//		cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 1);
+		cplex.setParam(IloCplex.Param.TimeLimit, 3450);
 //			cplex.setParam(IloCplex.Param.Parallel, 1);
 //			cplex.setParam(IloCplex.Param.Threads, 4);
 
@@ -675,7 +675,7 @@ public class Solver {
 					lageBez.add(i, N);
 				}
 				
-			output.createWindow(map, cplex.getValues(x), cplex.getValues(y), lageBez);
+	//		output.createWindow(map, cplex.getValues(x), cplex.getValues(y), lageBez);
 				
 				
 				
