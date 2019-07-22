@@ -701,7 +701,7 @@ public class Solver {
 			for (Entry<String, Line> line : lines.entrySet()) {
 				Line vl = line.getValue();
 				for (Station v : vl.getStations()) {
-					System.out.println(v);
+//					System.out.println(v);
 					for (int i = 0; i < v.getAdjacentStations().size(); i++) {
 						Station u = v.getAdjacentStations().get(i);
 						for (Line ul : u.getLines()){
@@ -724,7 +724,7 @@ public class Solver {
 																	cplex.prod(8, delta1[iU][iV][iW])),
 															cplex.prod(8, delta1[iU][iV][iW])));
 											//cplex.addEq(deltaDir[iU][iV][iW], cplex.abs(cplex.diff(dir[iU][iV], dir[iV][iW])));
-											System.out.println(u+" "+v+" "+w);
+//											System.out.println(u+" "+v+" "+w);
 											break;
 										}
 									}
@@ -863,7 +863,7 @@ public class Solver {
 			boolean overlap = false;
 			int k = 0;
 			while (!(overlap || 10 * k > n - 1)) { 
-				System.out.println(k);
+//				System.out.println(k);
 				for (int i = 0; i < n; i++) {
 					Station stationA = map.getStation(i);
 					for (int l = 10 * k; l < Math.min(10 * (k + 1), stationA.getNearestStations().size()); l++) {
@@ -901,7 +901,7 @@ public class Solver {
 							this.add(cplex.ge(cplex.diff(y[j], cplex.sum(cplex.sum(y[i], marginY + height),
 									cplex.prod(-M, cplex.diff(1, a[i][j][3])))), 0));
 
-							System.out.println(stationA + " cuts " + stationB);// + ": " + getValue(a[i][j][0]) + " "
+//							System.out.println(stationA + " cuts " + stationB);// + ": " + getValue(a[i][j][0]) + " "
 							//		+ getValue(a[i][j][1]) + " " + getValue(a[i][j][2]) + " " + getValue(a[i][j][3]));
 							/*
 							 * if (!(getValue( x[i]) - utility.getStringWidth(stationA.getName())/2 >=
