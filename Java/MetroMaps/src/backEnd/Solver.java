@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import ilog.concert.*;
 import ilog.cplex.*;
@@ -78,8 +79,8 @@ public class Solver {
 		try {
 			// define new model
 			this.cplex = new IloCplex();
-	//		cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 1);
-		cplex.setParam(IloCplex.Param.TimeLimit, 3450);
+//			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 1);
+//		cplex.setParam(IloCplex.Param.TimeLimit, 3450);
 //			cplex.setParam(IloCplex.Param.Parallel, 1);
 //			cplex.setParam(IloCplex.Param.Threads, 4);
 
@@ -91,6 +92,14 @@ public class Solver {
 			IloNumVar[][] d = new IloNumVar[n][n];
 			IloIntVar[][] biggap = new IloIntVar[n][n];
 			IloNumVar[][] mCost = new IloNumVar[n][n];
+			IloNumVar[][][] bendCost = new IloIntVar[n][n][n];
+
+			IloIntVar[][][] delta1 = new IloIntVar[n][n][n];
+			IloIntVar[][][] delta2 = new IloIntVar[n][n][n];
+
+			IloNumVar maxX = cplex.intVar(0, Integer.MAX_VALUE);
+			IloNumVar maxY = cplex.intVar(0, Integer.MAX_VALUE);
+
 
 			this.a = new IloIntVar[n][n][4];
 			this.b = new IloLinearIntExpr[n][8];
@@ -99,6 +108,7 @@ public class Solver {
 			IloIntVar[][] Aorig = new IloIntVar[n][n];
 			IloIntVar[][] Asucc = new IloIntVar[n][n];
 			dir = new IloIntVar[n][n];
+			IloIntVar[][][] deltaDir = new IloIntVar[n][n][n];
 			IloIntVar[][] rpos = new IloIntVar[n][n];
 
 			IloIntVar[][] beta = new IloIntVar[n][8];
@@ -146,6 +156,8 @@ public class Solver {
 				s4[i] = cplex.intVarArray(n, 0, 4);
 
 				lambda[i] = cplex.numVarArray(n, 0, Double.MAX_VALUE);
+				
+	
 				for (int j = 0; j <n;j++) {
 					a[i][j] = cplex.boolVarArray(4);
 					
@@ -153,6 +165,10 @@ public class Solver {
 					i_uvX[i][j] = cplex.boolVarArray(n);
 					
 					r_[i][j] = cplex.numVarArray(n,-Double.MAX_VALUE,Double.MAX_VALUE);
+					deltaDir[i][j] = cplex.intVarArray(n, 0, 7);
+
+					delta1[i][j] = cplex.boolVarArray(n);
+					delta2[i][j] = cplex.boolVarArray(n);
 				}
 				
 				for (int j=0;j<8;j++){
@@ -167,9 +183,15 @@ public class Solver {
 			// objective
 			IloLinearNumExpr objective = cplex.linearNumExpr();
 			IloLQNumExpr distance = cplex.lqNumExpr();
-			IloLinearNumExpr cost_S2 = cplex.linearNumExpr();
-			IloLinearNumExpr cost_S3 = cplex.linearNumExpr();
+			IloLinearIntExpr cost_S1 = cplex.linearIntExpr(); // Bend
+			IloLinearNumExpr cost_S2 = cplex.linearNumExpr(); // Relative Lage
+			IloLinearNumExpr cost_S3 = cplex.linearNumExpr(); // Abstand
 			IloLinearNumExpr cost_S4 = cplex.linearNumExpr();
+			
+			IloLinearNumExpr maxValue = cplex.linearNumExpr();
+			maxValue.addTerm(maxX, 1.6);
+			maxValue.addTerm(maxY, .9);
+			
 			for (int i = 0; i < n; i++) {
 				// cplex.add(x[i]);
 				// cplex.add(y[i]);
@@ -181,15 +203,18 @@ public class Solver {
 					// objective.addTerm(mCost[i][j], 1);
 					// distance.addTerm(1, dx[i][j], dx[i][j]);
 					// distance.addTerm(1, dy[i][j], dy[i][j]);
-
-					cost_S2.addTerm(rpos[i][j], 1000);
+					
+					cost_S2.addTerm(rpos[i][j], 500);
 					cost_S3.addTerm(lambda[i][j], 5);
 					cost_S4.addTerm(s4[i][j], -0.1);
+					for (int k = 0; k < n; k++) {
+						cost_S1.addTerm(deltaDir[i][j][k], 200);
+					}
 				}
 
 			}
 
-			cplex.addMinimize(cplex.sum(objective, distance, cost_S2, cost_S3));
+			cplex.addMinimize(cplex.sum(objective, distance, cost_S1, cost_S2, cost_S3, maxValue));
 			
 			// cplex.addMinimize(distance);
 
@@ -198,6 +223,8 @@ public class Solver {
 			
 			int minDistance = 40;
 			for (int i = 0; i < n; i++) {
+				cplex.addGe(maxX, x[i]);
+				cplex.addGe(maxY, y[i]);
 				final Station stationA = map.getStation(i);
 
 				cplex.addGe(x[i], utility.getStringWidth(stationA.getName())/2+10);
@@ -330,6 +357,30 @@ public class Solver {
 
 				for (Station stationB : stationA.getAdjacentStations()) {				
 					int j = map.getStationIndex(stationB);
+
+					cplex.addGe(cplex.diff(x[i],
+							cplex.sum(
+									cplex.sum(x[j],
+											utility.getStringWidth(stationB.getName()) / 2
+													+ utility.getStringWidth(stationA.getName()) / 2 + marginX),
+									cplex.prod(-M, cplex.diff(1, a[i][j][0])))),
+							0);
+					cplex.addGe(cplex.diff(x[j],
+							cplex.sum(
+									cplex.sum(x[i],
+											utility.getStringWidth(stationB.getName()) / 2
+													+ utility.getStringWidth(stationA.getName()) / 2 + marginX),
+									cplex.prod(-M, cplex.diff(1, a[i][j][1])))),
+							0);
+					cplex.addGe(cplex.diff(y[i],
+							cplex.sum(cplex.sum(y[j], marginY + height), cplex.prod(-M, cplex.diff(1, a[i][j][2])))),
+							0);
+					cplex.addGe(cplex.diff(y[j],
+							cplex.sum(cplex.sum(y[i], marginY + height), cplex.prod(-M, cplex.diff(1, a[i][j][3])))),
+							0);
+
+
+
 //					cplex.addEq(cplex.sum(cplex.eq(labelL[i],labelL[j]),
 //					cplex.sum(cplex.eq(labelR[i],labelR[j]),
 //					cplex.sum(cplex.eq(labelT[i],labelT[j]),
@@ -535,12 +586,14 @@ public class Solver {
 					}
 				} 
 				
-				for (int j = i+1; j < n; j++) {
+				for (int j = 0; j < n; j++) {
+					if (i != j) {
 					IloLinearIntExpr sum = cplex.linearIntExpr();
 					for (int k = 0; k < 4; k++) {
 						sum.addTerm(a[i][j][k], 1);
 					}
 					cplex.addGe(sum, 1);
+					}
 				}
 					
 //					for (int m = 0; m < edges.size(); m++) {
@@ -643,6 +696,47 @@ public class Solver {
 				}
 			}
 
+			// Line Bend
+			Map<String, Line> lines = map.getLines();
+			for (Entry<String, Line> line : lines.entrySet()) {
+				Line vl = line.getValue();
+				for (Station v : vl.getStations()) {
+					System.out.println(v);
+					for (int i = 0; i < v.getAdjacentStations().size(); i++) {
+						Station u = v.getAdjacentStations().get(i);
+						for (Line ul : u.getLines()){
+							if (ul == vl) {
+								for(int j = i+1; j < v.getAdjacentStations().size(); j++) {
+									Station w = v.getAdjacentStations().get(j);
+									for (Line wl : w.getLines()) {
+										if (wl == vl) {
+											int iU = map.getStationIndex(u);
+											int iV = map.getStationIndex(v);
+											int iW = map.getStationIndex(w);
+											cplex.addLe(cplex.prod(deltaDir[iU][iV][iW],-1),
+													cplex.sum(
+															cplex.diff(cplex.diff(dir[iU][iV], dir[iV][iW]),
+																	cplex.prod(8, delta1[iU][iV][iW])),
+															cplex.prod(8, delta1[iU][iV][iW])));
+											cplex.addGe(deltaDir[iU][iV][iW],
+													cplex.sum(
+															cplex.diff(cplex.diff(dir[iU][iV], dir[iV][iW]),
+																	cplex.prod(8, delta1[iU][iV][iW])),
+															cplex.prod(8, delta1[iU][iV][iW])));
+											//cplex.addEq(deltaDir[iU][iV][iW], cplex.abs(cplex.diff(dir[iU][iV], dir[iV][iW])));
+											System.out.println(u+" "+v+" "+w);
+											break;
+										}
+									}
+								}
+								break;
+							}
+						}
+					}
+				}
+			}
+			
+			
 			// solve model
 			cplex.use(new LazyConstraintCallback());
 			cplex.use(new InfoCallback());
@@ -675,7 +769,7 @@ public class Solver {
 					lageBez.add(i, N);
 				}
 				
-	//		output.createWindow(map, cplex.getValues(x), cplex.getValues(y), lageBez);
+			output.createWindow(map, cplex.getValues(x), cplex.getValues(y), lageBez);
 				
 				
 				
@@ -755,7 +849,7 @@ public class Solver {
 			boolean overlapping = false;
 			boolean cuts[][][] = new boolean[n][n][n];
 
-			
+			/*
 			for (int m = 0; m < edges.size(); m++) {
 				edge e1 = edges.get(m);
 				for (int n = m + 1; n < edges.size(); n++) {
@@ -764,64 +858,92 @@ public class Solver {
 						
 					}
 				}
-			}
-			
-			for (int i = 0; i < n; i++) {
-				Station stationA = map.getStation(i);
+			}*/
 
-				for (int j = i + 1; j < n; j++) {
-					Station stationB = map.getStation(j);
-					// overlapping labels
-					if (!((getValue(
-							x[i]) - utility.getStringWidth(stationA.getName())/2 >= (getValue(x[j]) + utility.getStringWidth(stationB.getName())/2 + marginX))
-							|| (getValue(x[j]) - utility.getStringWidth(stationB.getName())/2 >= (getValue(x[i]) + utility.getStringWidth(stationA.getName())/2
-									+ marginX))
-							|| (getValue(labelY[i]) >= (getValue(labelY[j]) + marginY + height))
-							|| (getValue(labelY[j])  >= (getValue(labelY[i]) + marginY + height)))) {
-						
-						
-						if (!(getValue(
-								x[i]) - utility.getStringWidth(stationA.getName())/2 >= (getValue(x[j]) + utility.getStringWidth(stationB.getName())/2 + marginX))) {
+			boolean overlap = false;
+			int k = 0;
+			while (!(overlap || 10 * k > n - 1)) { 
+				System.out.println(k);
+				for (int i = 0; i < n; i++) {
+					Station stationA = map.getStation(i);
+					for (int l = 10 * k; l < Math.min(10 * (k + 1), stationA.getNearestStations().size()); l++) {
+						Station stationB = stationA.getNearestStations().get(l);
+						int j = map.getStationIndex(stationB);
+						// }
+						// for (int j = i + 1; j < n; j++) {
+						// Station stationB = map.getStation(j);
+						// overlapping labels
+//						System.out.println(i+" "+j+" "+l+" "+k);
+						if (!((getValue(x[i]) - utility.getStringWidth(stationA.getName()) / 2 >= (getValue(x[j])
+								+ utility.getStringWidth(stationB.getName()) / 2 + marginX))
+								|| (getValue(x[j]) - utility.getStringWidth(stationB.getName()) / 2 >= (getValue(x[i])
+										+ utility.getStringWidth(stationA.getName()) / 2 + marginX))
+								|| (getValue(labelY[i]) >= (getValue(labelY[j]) + marginY + height))
+								|| (getValue(labelY[j]) >= (getValue(labelY[i]) + marginY + height)))) {
+							overlap = true;
+
 							this.add(cplex.ge(cplex.diff(x[i],
-									cplex.sum(cplex.sum(x[j], utility.getStringWidth(stationB.getName())/2 +  utility.getStringWidth(stationA.getName())/2 + marginX),
+									cplex.sum(
+											cplex.sum(x[j],
+													utility.getStringWidth(stationB.getName()) / 2
+															+ utility.getStringWidth(stationA.getName()) / 2 + marginX),
 											cplex.prod(-M, cplex.diff(1, a[i][j][0])))),
 									0));
-						} 
-//						
-						if (!(getValue(x[j]) - utility.getStringWidth(stationB.getName())/2 >= (getValue(x[i]) + utility.getStringWidth(stationA.getName())/2
-								+ marginX))) {
-						
-						this.add(cplex.ge(cplex.diff(x[j],
-								cplex.sum(cplex.sum(x[i],  utility.getStringWidth(stationB.getName())/2 + utility.getStringWidth(stationA.getName())/2 + marginX),
-										cplex.prod(-M, cplex.diff(1, a[i][j][1])))),
-								0));
+							this.add(cplex.ge(cplex.diff(x[j],
+									cplex.sum(
+											cplex.sum(x[i],
+													utility.getStringWidth(stationB.getName()) / 2
+															+ utility.getStringWidth(stationA.getName()) / 2 + marginX),
+											cplex.prod(-M, cplex.diff(1, a[i][j][1])))),
+									0));
+							this.add(cplex.ge(cplex.diff(y[i], cplex.sum(cplex.sum(y[j], marginY + height),
+									cplex.prod(-M, cplex.diff(1, a[i][j][2])))), 0));
+							this.add(cplex.ge(cplex.diff(y[j], cplex.sum(cplex.sum(y[i], marginY + height),
+									cplex.prod(-M, cplex.diff(1, a[i][j][3])))), 0));
 
-						} 
-						if (!(getValue(y[i]) >= (getValue(y[j]) + marginY + height))){
-							this.add(cplex.ge(cplex.diff(y[i],
-								cplex.sum(cplex.sum(y[j], marginY + height), cplex.prod(-M, cplex.diff(1, a[i][j][2])))),
-								0));
-
-						} 
-						if(!(getValue(y[j]) >= (getValue(y[i]) + marginY + height))){
-						this.add(cplex.ge(cplex.diff(y[j],
-								cplex.sum(cplex.sum(y[i], marginY + height), cplex.prod(-M, cplex.diff(1, a[i][j][3])))),
-								0));
-
+							System.out.println(stationA + " cuts " + stationB);// + ": " + getValue(a[i][j][0]) + " "
+							//		+ getValue(a[i][j][1]) + " " + getValue(a[i][j][2]) + " " + getValue(a[i][j][3]));
+							/*
+							 * if (!(getValue( x[i]) - utility.getStringWidth(stationA.getName())/2 >=
+							 * (getValue(x[j]) + utility.getStringWidth(stationB.getName())/2 + marginX))) {
+							 * this.add(cplex.ge(cplex.diff(x[i], cplex.sum(cplex.sum(x[j],
+							 * utility.getStringWidth(stationB.getName())/2 +
+							 * utility.getStringWidth(stationA.getName())/2 + marginX), cplex.prod(-M,
+							 * cplex.diff(1, a[i][j][0])))), 0));
+							 * 
+							 * System.out.println(stationA +" cuts "+ stationB); } if (!(getValue(x[j]) -
+							 * utility.getStringWidth(stationB.getName())/2 >= (getValue(x[i]) +
+							 * utility.getStringWidth(stationA.getName())/2 + marginX))) {
+							 * 
+							 * this.add(cplex.ge(cplex.diff(x[j], cplex.sum(cplex.sum(x[i],
+							 * utility.getStringWidth(stationB.getName())/2 +
+							 * utility.getStringWidth(stationA.getName())/2 + marginX), cplex.prod(-M,
+							 * cplex.diff(1, a[i][j][1])))), 0));
+							 * 
+							 * } if (!(getValue(y[i]) >= (getValue(y[j]) + marginY + height))){
+							 * this.add(cplex.ge(cplex.diff(y[i], cplex.sum(cplex.sum(y[j], marginY +
+							 * height), cplex.prod(-M, cplex.diff(1, a[i][j][2])))), 0));
+							 * 
+							 * } if (!(getValue(y[j]) >= (getValue(y[i]) + marginY + height))){
+							 * this.add(cplex.ge(cplex.diff(y[j], cplex.sum(cplex.sum(y[i], marginY +
+							 * height), cplex.prod(-M, cplex.diff(1, a[i][j][3])))), 0)); }
+							 */
 						}
 					}
+
 				}
-
-				int deg = stationA.getAdjacentStations().size();
-				int [] adj = new int[8];
-				if (deg <= 2) {
-					for(Station stationB : stationA.getAdjacentStations()) {
-						int j = map.getStationIndex(stationB);
-
-
-					}
-				}
+				k++;
+//				int deg = stationA.getAdjacentStations().size();
+//				int [] adj = new int[8];
+//				if (deg <= 2) {
+//					for(Station stationB : stationA.getAdjacentStations()) {
+//						int j = map.getStationIndex(stationB);
+//
+//
+//					}
+//				}
 			}
+			/*
 			for (int i = 0; i < n; i++) {
 				Station stationA = map.getStation(i);
 				
@@ -864,7 +986,7 @@ public class Solver {
 							}
 							}
 				}
-			}
+			}*/
 //			
 ////							if (getValue(dir[u][v]) == 2) {
 ////								if (getValue(x[u]) > getValue(labelX[i]) && getValue(x[u]) < getValue(labelX[i])
