@@ -86,6 +86,13 @@ public class Station {
 	public ArrayList<Station> getNearestStations(){
 		return nearestStations;
 	}
+	
+	public boolean isNeighbour(Station s) {
+	if (adjacentStations.indexOf(s) == -1) {
+		return false;
+	} else 
+		return true;
+	}
 
 	@Override
 	public String toString() {

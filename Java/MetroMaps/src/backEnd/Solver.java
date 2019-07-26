@@ -189,8 +189,8 @@ public class Solver {
 			IloLinearNumExpr cost_S4 = cplex.linearNumExpr();
 			
 			IloLinearNumExpr maxValue = cplex.linearNumExpr();
-			maxValue.addTerm(maxX, 1.6);
-			maxValue.addTerm(maxY, .9);
+//			maxValue.addTerm(maxX, 1);
+			maxValue.addTerm(maxY, 10);
 			
 			for (int i = 0; i < n; i++) {
 				// cplex.add(x[i]);
@@ -203,18 +203,19 @@ public class Solver {
 					// objective.addTerm(mCost[i][j], 1);
 					// distance.addTerm(1, dx[i][j], dx[i][j]);
 					// distance.addTerm(1, dy[i][j], dy[i][j]);
-					
-					cost_S2.addTerm(rpos[i][j], 500);
-					cost_S3.addTerm(lambda[i][j], 5);
-					cost_S4.addTerm(s4[i][j], -0.1);
-					for (int k = 0; k < n; k++) {
-						cost_S1.addTerm(deltaDir[i][j][k], 200);
+					if (map.getStation(i).isNeighbour(map.getStation(j))) {
+						cost_S2.addTerm(rpos[i][j], 100);
+						cost_S3.addTerm(lambda[i][j], 10);
+	//					cost_S4.addTerm(s4[i][j], -0.1);
+						for (int k = 0; k < n; k++) {
+							cost_S1.addTerm(deltaDir[i][j][k],250);
+						}
 					}
 				}
 
 			}
 
-			cplex.addMinimize(cplex.sum(objective, distance, cost_S1, cost_S2, cost_S3, maxValue));
+			cplex.addMinimize(cplex.sum(cost_S1, cost_S2, cost_S3, maxValue));
 			
 			// cplex.addMinimize(distance);
 
@@ -862,11 +863,12 @@ public class Solver {
 
 			boolean overlap = false;
 			int k = 0;
-			while (!(overlap || 10 * k > n - 1)) { 
+			int stepsize = 10;
+			while (!(overlap || stepsize * k > n - 1)) { 
 //				System.out.println(k);
 				for (int i = 0; i < n; i++) {
 					Station stationA = map.getStation(i);
-					for (int l = 10 * k; l < Math.min(10 * (k + 1), stationA.getNearestStations().size()); l++) {
+					for (int l = stepsize * k; l < Math.min(stepsize * (k + 1), stationA.getNearestStations().size()); l++) {
 						Station stationB = stationA.getNearestStations().get(l);
 						int j = map.getStationIndex(stationB);
 						// }
