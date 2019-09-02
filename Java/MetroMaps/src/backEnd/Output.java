@@ -164,6 +164,8 @@ public class Output {
 			String OS = System.getProperty("os.name").toLowerCase();
 			Config config = Config.getInstance();
 			String graphName = config.name;
+			String weights = config.weights[0]+"-"+config.weights[1]+"-"+config.weights[2];
+			name = weights +"_"+ name;
 
 			if (OS.contains("win")) {
 				File theDirOut = new File("output");

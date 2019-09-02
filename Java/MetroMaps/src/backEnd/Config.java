@@ -4,7 +4,7 @@ public class Config {
 	private static Config instance;
 	
 	String name;
-	
+	int weights[];
 			
 	private Config() {
 	}

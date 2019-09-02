@@ -61,6 +61,7 @@ public class Solver {
 	IloIntVar[][][] i_uvX;
 
 	public void solve(MetroMap map_) {
+		Config config = Config.getInstance();
 		this.map = map_;
 		this.n = map.getStations().size();
 
@@ -79,7 +80,7 @@ public class Solver {
 		try {
 			// define new model
 			this.cplex = new IloCplex();
-			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 1);
+			cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0);
 	//	cplex.setParam(IloCplex.Param.TimeLimit, 10800);
 //			cplex.setParam(IloCplex.Param.Parallel, 1);
 //			cplex.setParam(IloCplex.Param.Threads, 4);
@@ -204,18 +205,18 @@ public class Solver {
 					// distance.addTerm(1, dx[i][j], dx[i][j]);
 					// distance.addTerm(1, dy[i][j], dy[i][j]);
 					if (map.getStation(i).isNeighbour(map.getStation(j))) {
-						cost_S2.addTerm(rpos[i][j], 100);
-						cost_S3.addTerm(lambda[i][j], 10);
+						cost_S2.addTerm(rpos[i][j], config.weights[1]);
+						cost_S3.addTerm(lambda[i][j], config.weights[2]);
 	//					cost_S4.addTerm(s4[i][j], -0.1);
 						for (int k = 0; k < n; k++) {
-							cost_S1.addTerm(deltaDir[i][j][k],250);
+							cost_S1.addTerm(deltaDir[i][j][k], config.weights[0]);
 						}
 					}
 				}
 
 			}
 
-			cplex.addMinimize(cplex.sum(cost_S1, cost_S2, cost_S3, maxValue));
+			cplex.addMinimize(cplex.sum(cost_S1, cost_S2, cost_S3));
 			
 			// cplex.addMinimize(distance);
 
