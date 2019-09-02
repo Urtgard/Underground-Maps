@@ -118,6 +118,7 @@ public class Displayer {
 			tmp.addActionListener(l);
 			//erzeuge maße von Button und Location
 			int breite =  getStringWidth(buttons.get(i).getName());
+			
 			tmp.setBounds((int)(((buttons.get(i).getX()-breite/2)*maxX)+50), (int)(height - (buttons.get(i).getY()+7)*maxY +20),(int)(breite*maxX), (int)(14*maxY));
 			
 			list.add(tmp);
