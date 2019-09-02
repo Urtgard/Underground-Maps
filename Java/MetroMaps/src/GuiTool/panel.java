@@ -23,7 +23,7 @@ public class panel extends JPanel {
 	Button toDraw;
 	ArrayList<Segment> segments = null;
 
-	public void drawSec(int x1, int y1, int sec, Graphics2D g2d) {
+	public void drawSec(int x1, int y1, int sec, Graphics2D g2d, int breite) {
 		float[] dash1 = { 2f, 0f, 2f };
 		BasicStroke bs1 = new BasicStroke(2, 
 		        BasicStroke.CAP_BUTT, 
@@ -38,7 +38,7 @@ public class panel extends JPanel {
 		//g.setColor(Color.BLUE);
 		switch(sec){
 			case 0:
-				x2 = x1 + 40;
+				x2 = x1 + breite + 40;
 				y2 = y1;
 				break;
 			case 1:
@@ -54,7 +54,7 @@ public class panel extends JPanel {
 				y2 = y1 - 28;
 				break;
 			case 4:
-				x2 = x1 - 40;
+				x2 = x1 - 40 - breite;
 				y2 = y1;
 				break;
 			case 5:
@@ -106,18 +106,18 @@ public class panel extends JPanel {
 				g2d.drawLine(x1, y1, x2, y2);
 				
 				if (step == 0 || step == -1) {
-					// zeichne nächsten Sektor
-					drawSec(x1+2*i, y1+2*i, (secOrig+1)%8, g2d);
+					// zeichne nï¿½chsten Sektor
+					drawSec(x1+2*i, y1+2*i, (secOrig+1)%8, g2d, this.toDraw.getBreite());
 				}
 				
 				if (step == 0 || step == 1) {
 					// zeichne vorherigen Sektor
-					drawSec(x1+2*i, y1+2*i, (secOrig-1+8)%8, g2d);
+					drawSec(x1+2*i, y1+2*i, (secOrig-1+8)%8, g2d, this.toDraw.getBreite());
 				}
 				
 				if (step == -1 || step == 1) {
 					// zeichne originalen Sektor
-					drawSec(x1+2*i, y1+2*i, secOrig, g2d);
+					drawSec(x1+2*i, y1+2*i, secOrig, g2d, this.toDraw.getBreite());
 				}
 			}
 			/*

@@ -8,9 +8,18 @@ public class MetroMap {
 	private Map<String, Line> lines = new HashMap<String, Line>();
 	private Map<Station, Integer> indexByStation = new HashMap<Station, Integer>();
 	private Map<Integer, Station> stationByIndex = new HashMap<Integer, Station>();
-	private Color[] colors = new Color[] { new Color(255, 51, 51), new Color(0, 153, 0), new Color(51, 153, 255),
-			new Color(255, 102, 0), new Color(153, 0, 255), new Color(255, 153, 51), new Color(0, 153, 51),
-			new Color(51, 255, 255), new Color(255, 102, 255), new Color(153, 51, 255), new Color(255, 255, 51),
+	private Color[] colors = new Color[] {
+			new Color(255, 51, 51),
+			new Color(0, 153, 0),
+			new Color(51, 153, 255),
+			new Color(255, 102, 255),
+			new Color(51, 255, 255),//helblau
+			new Color(255, 153, 51),
+			new Color(0, 153, 51),
+			new Color(255, 102, 0)//orange
+			
+	
+	,new Color(153, 0, 255), new Color(153, 51, 255), new Color(255, 255, 51),
 			new Color(0, 153, 0), new Color(51, 153, 255), new Color(255, 102, 0), new Color(153, 0, 255),
 			new Color(255, 51, 51), new Color(0, 153, 0), new Color(51, 153, 255), new Color(255, 102, 0),
 			new Color(153, 0, 255), new Color(255, 153, 51), new Color(0, 153, 51), new Color(51, 255, 255),
