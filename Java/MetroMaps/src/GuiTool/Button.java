@@ -12,6 +12,7 @@ public class Button {
 	private String name;
 	private double x;
 	private double y;
+	private int breite;
 	private ArrayList<Neighbour> N;
 	private Map<String,Line> l;
 	
@@ -33,6 +34,16 @@ public class Button {
 		this.name = name;
 		this.x = x;
 		this.y = y;
+		this.N = N;
+		this.l = l;
+	}
+	
+	public Button(ArrayList<String> linienName, String name, double x, double y, int breite, ArrayList<Neighbour> N, Map<String,Line> l) {
+		this.linienName = linienName;
+		this.name = name;
+		this.x = x;
+		this.y = y;
+		this.breite = breite;
 		this.N = N;
 		this.l = l;
 	}
@@ -83,6 +94,16 @@ public class Button {
 		this.y = y;
 	}
 
+	
+	
+
+	public int getBreite() {
+		return breite;
+	}
+
+	public void setBreite(int breite) {
+		this.breite = breite;
+	}
 
 	public ArrayList<Neighbour> getN() {
 		return N;
