@@ -3,6 +3,7 @@ import java.awt.BasicStroke;
 import GuiTool.*;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -17,6 +18,9 @@ import javax.imageio.ImageIO;
 
 public class Output {
 	boolean bigline = false;
+	
+	
+	
 
 	public void createImage(MetroMap map, double[] x, double[] y, double[] labelX, double[] labelY) {
 		DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy-HH-mm-ss");
@@ -24,6 +28,8 @@ public class Output {
 		String name = dateFormat.format(date);
 		createImage(map, x, y, labelX, labelY, name);
 	}
+	
+	
 
 
 	public void createWindow(MetroMap map, double[] x, double[] y, ArrayList<ArrayList<int[]>> lageBez){
@@ -43,7 +49,7 @@ public class Output {
 				linien.add(l.getName());
 			}
 			
-			Button b = new Button(linien, s.getName(), x[i], y[i], N, map.getLines());
+			Button b = new Button(linien, s.getName(), x[i], y[i], getStringWidth(s.getName()), N, map.getLines());
 			buttonlist.add(b);
 		}
 			
@@ -239,4 +245,17 @@ public class Output {
 
 		System.out.println("Image Created in Directory " + System.getProperty("user.dir"));
 	}
+	//eingefügt, im Breite für jeden Button zu bestimmen
+		public int getStringWidth(String str) {
+			BufferedImage i2 = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
+			Graphics2D g = i2.createGraphics();
+			g.setFont(new Font("Arial", Font.PLAIN, 14));
+			FontMetrics fm = g.getFontMetrics();
+			// Rectangle2D bounds = fm.getStringBounds(str, g);
+			// return (int) bounds.getWidth();
+			return fm.stringWidth(str);
+		}
+
+	
+	
 }
