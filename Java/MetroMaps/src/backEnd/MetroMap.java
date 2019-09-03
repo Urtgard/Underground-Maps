@@ -9,22 +9,44 @@ public class MetroMap {
 	private Map<Station, Integer> indexByStation = new HashMap<Station, Integer>();
 	private Map<Integer, Station> stationByIndex = new HashMap<Integer, Station>();
 	private Color[] colors = new Color[] {
-			new Color(255, 51, 51),
-			new Color(0, 153, 0),
-			new Color(51, 153, 255),
-			new Color(255, 102, 255),
-			new Color(51, 255, 255),//helblau
-			new Color(255, 153, 51),
-			new Color(0, 153, 51),
-			new Color(255, 102, 0)//orange
 			
-	
-	,new Color(153, 0, 255), new Color(153, 51, 255), new Color(255, 255, 51),
-			new Color(0, 153, 0), new Color(51, 153, 255), new Color(255, 102, 0), new Color(153, 0, 255),
-			new Color(255, 51, 51), new Color(0, 153, 0), new Color(51, 153, 255), new Color(255, 102, 0),
-			new Color(153, 0, 255), new Color(255, 153, 51), new Color(0, 153, 51), new Color(51, 255, 255),
-			new Color(255, 102, 255), new Color(153, 51, 255), new Color(255, 255, 51), new Color(0, 153, 0),
-			new Color(51, 153, 255), new Color(255, 102, 0), new Color(153, 0, 255), };
+			new Color(255, 51, 51), //rot
+			new Color(0, 153, 0), //grün
+			new Color(51, 153, 255), //blau
+			new Color(255, 102, 255), //pink
+			new Color(139,69,19), //braun
+			new Color(0, 0, 0),//schwarz
+			new Color(153, 0, 255), //lila
+			new Color(87,87,87), //grau
+			new Color(255, 255, 51), //gelb
+			new Color(51, 255, 255),//hellblau
+			new Color(255, 153, 51), //orange
+			
+			new Color(255, 51, 51), //rot
+			new Color(0, 153, 0), //grün
+			new Color(51, 153, 255), //blau
+			new Color(255, 102, 255), //pink
+			new Color(139,69,19), //braun
+			new Color(0, 0, 0),//schwarz
+			new Color(153, 0, 255), //lila
+			new Color(87,87,87), //grau
+			new Color(255, 255, 51), //gelb
+			new Color(51, 255, 255),//hellblau
+			new Color(255, 153, 51), //orange
+			
+			
+			new Color(255, 51, 51), //rot
+			new Color(0, 153, 0), //grün
+			new Color(51, 153, 255), //blau
+			new Color(255, 102, 255), //pink
+			new Color(139,69,19), //braun
+			new Color(0, 0, 0),//schwarz
+			new Color(153, 0, 255), //lila
+			new Color(87,87,87), //grau
+			new Color(255, 255, 51), //gelb
+			new Color(51, 255, 255),//hellblau
+			new Color(255, 153, 51), //orange
+			};
 
 	public void addStation(Station station) {
 		stations.put(station.getName(), station);
