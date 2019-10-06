@@ -1,17 +1,19 @@
 package backEnd;
-import GuiTool.*;
 
 public class Core {
 	public static void main(String[] args) {
-		
 		Config config = Config.getInstance();
-		config.name = "sydney";
-		config.weights = new int[] {1, 1, 1};
+		config.path = "input/montreal.graphml";
+		config.name = "montreal";
+		config.weights = new int[] { 25, 1, 50 };
+		config.only45 = true;
+		config.lazyConstraints = false;
+		config.MIPGap = 0;
+		config.TimeLimit = 0;
 		
 		XMLParser parser = new XMLParser();
-		// MetroMap map = parser.getMapFromXML("berlin.xml");
-		MetroMap map = parser.getMapFromXML(config.name + ".graphml");
-		// System.out.println(map);
+		MetroMap map = parser.getMapFromXML(config.path);
+		System.out.println(map);
 		Solver s = new Solver();
 		s.solve(map);
 	}

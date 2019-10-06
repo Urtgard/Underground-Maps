@@ -6,3 +6,5 @@ Java/MetroMaps/bin/
 Java/MetroMaps/lib/CPLEX_Studio129 
 Java/MetroMaps/.project
 *.png
+desktop.ini
+.vscode
